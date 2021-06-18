@@ -9,25 +9,25 @@ location: "San Jose, Costa Rica"
 ---
 
 Kinetics and Chemical Reactors 
-======
-(Spring 2019), lead teacher
+------
+(Spring 2019) Lead teacher
 
 Laboratory of Measurements and Experimental Data Analysis 
-======
-(Spring 2017 to Fall 2018), lead teacher
+------
+(Spring 2017 to Fall 2018) Lead teacher
 
 Thermodynamics I
-======
-(Fall 2018), lead teacher
+------
+(Fall 2018) Lead teacher
 
 Thermodynamics I
-======
-(Fall 2016 to 2018), supporting teacher, recitations  
+------
+(Fall 2016 to 2018) Supporting teacher, recitations  
 
 Laboratory of Separation Operations of Phases 
-======
-(Fall 2017), lead teacher
+------
+(Fall 2017) Lead teacher
 
 Kinetics and Chemical Reactors 
-======
-(Fall 2016 to Spring 2018), supporting teacher in charge of practice and simulation classes and tutoring
+------
+(Fall 2016 to Spring 2018) supporting teacher in charge of practice and simulation classes and tutoring
