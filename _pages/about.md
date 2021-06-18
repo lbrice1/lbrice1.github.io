@@ -24,6 +24,6 @@ My research is interdisciplinary and application oriented. I am conviced that so
 
 Teaching philosophy
 ------
-I believe that every student that comes to our classroom deserves every and all opportunities to learn and succeed. Therefore, it is our job as educators to build an learning enviroment in which al backgrounds and experiences are welcomed and cherished. 
+I believe that every student that comes to our classroom deserves every and all opportunities to learn and succeed. Therefore, it is our job as educators to build an learning enviroment in which al backgrounds and experiences are recognized, welcomed and cherished. 
 
 
