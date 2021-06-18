@@ -1,20 +1,35 @@
 ---
-title: "Teaching experience 1"
+title: "Adjunct Instructor"
 collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2014-spring-teaching-1
-venue: "University 1, Department"
-date: 2014-01-01
-location: "City, Country"
+venue: "Universidad de Costa Rica, School of Chemical Engineering"
+date: 2016-2019
+location: "San Jose, Costa Rica"
 ---
 
 This is a description of a teaching experience. You can use markdown like any other post.
 
-Heading 1
+Kinetics and Chemical Reactors 
 ======
+(Spring 2019), lead teacher
 
-Heading 2
+Laboratory of Measurements and Experimental Data Analysis 
 ======
+(Spring 2017 to Fall 2018), lead teacher
 
-Heading 3
+Thermodynamics I
 ======
+(Fall 2018), lead teacher
+
+Thermodynamics I
+======
+(Fall 2016 to 2018), supporting teacher, recitations  
+
+Laboratory of Separation Operations of Phases 
+======
+(Fall 2017), lead teacher
+
+Kinetics and Chemical Reactors 
+======
+(Fall 2016 to Spring 2018), supporting teacher in charge of practice and simulation classes and tutoring
