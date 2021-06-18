@@ -8,8 +8,6 @@ date: 2019-07-30
 location: "San Jose, Costa Rica"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
-
 Kinetics and Chemical Reactors 
 ======
 (Spring 2019), lead teacher
