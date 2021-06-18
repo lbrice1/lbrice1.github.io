@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am PhD student at Louisiana State University working on Process Systems Engineering and Machine Learning. My research focuses on multiscale modeling using ML-based surrogate models and how to deal with scarce availability of data.
+I am PhD student at Louisiana State University working on Process Systems Engineering and Machine Learning. My research focuses on multiscale modeling using ML-based surrogate models and how to deal with scarce availability of data. I am also interested in teaching and learning in Chemical Engineering.
 
 Areas of interest
 ======
@@ -18,7 +18,12 @@ Areas of interest
 4. Process design and optimization
 5. Teaching in Chemical Engineering
 
+Research philosophy
+------
+My research is interdisciplinary and application oriented. I am conviced that solving our world's big problems such as climate change, energy generation and distribution, drinking and wastewater management, requires the convergence of many fields of expertise, and a pragmatic vision to bringo effective solutions to large scale applications.
+
 Teaching philosophy
 ------
-I believe that every student that comes to our classroom deserve every and all opportunities to learn and succeed. Therefore, it is our job as educators to create an learning enviroment in which al backgrounds and experiences are welcomed and cherished. 
+I believe that every student that comes to our classroom deserves every and all opportunities to learn and succeed. Therefore, it is our job as educators to build an learning enviroment in which al backgrounds and experiences are welcomed and cherished. 
+
 
