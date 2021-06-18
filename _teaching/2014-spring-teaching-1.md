@@ -8,7 +8,7 @@ date: 2019-07-30
 location: "San Jose, Costa Rica"
 ---
 
-
+Courses: Kinetics and Chemical Reactors, Laboratory of Measurements and Experimental Data Analysis, Thermodynamics I, Laboratory of Separation Operations of Phases 
 
 Kinetics and Chemical Reactors 
 ------
