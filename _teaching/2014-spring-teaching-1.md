@@ -1,12 +1,14 @@
 ---
 title: "Adjunct Instructor"
 collection: teaching
-type: "Undergraduate course"
+type: "Undergraduate courses"
 permalink: /teaching/2014-spring-teaching-1
 venue: "Universidad de Costa Rica, School of Chemical Engineering"
 date: 2019-07-30
 location: "San Jose, Costa Rica"
 ---
+
+
 
 Kinetics and Chemical Reactors 
 ------
