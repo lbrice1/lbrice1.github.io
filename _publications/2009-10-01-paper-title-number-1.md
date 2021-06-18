@@ -6,7 +6,8 @@ excerpt: 'A multilevel modeling and data analysis framework were constructed for
 date: 2021-02-12
 venue: 'Patterns'
 paperurl: 'https://doi.org/10.1016/j.patter.2020.100187'
-citation: 'Luis A. Briceno-Mena, Gokul Venugopalan, José A. Romagnoli, Christopher G. Arges, Machine learning for guiding high-temperature PEM fuel cells with greater power density, Patterns, Volume 2, Issue 2, 2021, 100187, ISSN 2666-3899, https://doi.org/10.1016/j.patter.2020.100187.'
+citation: 'Luis A. Briceno-Mena, Gokul Venugopalan, José A. Romagnoli, Christopher G. Arges. (2021). &quot;Machine learning for guiding high-temperature PEM fuel cells with greater power density, Patterns.&quot; <i>Patterns</i>. Volume 2, Issue 2, 2021, 100187, ISSN 2666-3899, https://doi.org/10.1016/j.patter.2020.100187.'
+
 ---
 This paper is about the number 1. The number 2 is left for future work.
 
