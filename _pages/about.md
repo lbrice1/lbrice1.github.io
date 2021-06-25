@@ -20,7 +20,7 @@ Areas of interest
 
 Research philosophy
 ------
-My research is interdisciplinary and application oriented. I am conviced that solving our world's big problems such as climate change, energy generation and distribution, drinking and wastewater management, requires the convergence of many fields of expertise, and a pragmatic vision to bring effective solutions to large scale applications.
+I aim for my research to be interdisciplinary and application oriented. I am conviced that solving our world's big problems such as climate change, energy generation and distribution, drinking and wastewater management, requires the convergence of many fields of expertise, and a pragmatic vision to bring effective solutions to large scale applications.
 
 Teaching philosophy
 ------
