@@ -1,5 +1,5 @@
 ---
-title: "SimWiz (collaborator)"
+title: "SimWiz (contributor)"
 excerpt: "<br/><img src='/images/swcomp.png'>"
 collection: portfolio
 ---
