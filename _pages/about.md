@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am PhD student at Louisiana State University working on Process Systems Engineering and Machine Learning. My research focuses on multiscale modeling using ML-based surrogate models and how to deal with scarce availability of data. I am also interested in teaching and learning in Chemical Engineering.
+I am PhD candidate at Louisiana State University working on Process Systems Engineering and Machine Learning. My research focuses on multiscale modeling using ML-based surrogate models and how to deal with scarce availability of data. I am also interested in teaching and learning in Chemical Engineering.
 
 Areas of interest
 ======
