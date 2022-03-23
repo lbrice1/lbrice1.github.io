@@ -8,8 +8,3 @@ venue: 'Ingenieria'
 paperurl: 'https://revistas.ucr.ac.cr/index.php/ingenieria/article/view/39236/41886'
 citation: 'Briceño, L., Durán, J. E. (2020). &quot;Heterogeneous Catalytic Ozonation of Phenol over Iron-based Catalysts in a Trickle Bed Reactor.&quot; <i>Ingenieria</i>. 20(July-December 2020).'
 ---
-This paper is about the number 2. The number 3 is left for future work.
-
-[Download paper here](http://academicpages.github.io/files/paper2.pdf)
-
-Recommended citation: Your Name, You. (2010). "Paper Title Number 2." <i>Journal 1</i>. 1(2).
