@@ -1,8 +1,8 @@
 var addressPoints = [
   [
     "Guayaquil, Ecuador",
-    -2.1704143,
-    -79.90502408427746
+    -2.2895167,
+    -80.0983887437901
   ],
   [
     "Bogota, Colombia",
@@ -16,7 +16,22 @@ var addressPoints = [
   ],
   [
     "Istanbul, Turkey",
-    41.0096334,
-    28.9651646
+    41.0091982,
+    28.9662187
+  ],
+  [
+    "Washington D.C., United States",
+    38.8950368,
+    -77.0365427
+  ],
+  [
+    "Barcelona, Spain",
+    41.3828939,
+    2.1774322
+  ],
+  [
+    "Telluride, Colorado, United States",
+    37.9374939,
+    -107.812285
   ]
 ];
