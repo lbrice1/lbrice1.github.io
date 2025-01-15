@@ -10,7 +10,7 @@ redirect_from:
 
 I am a Chemical Engineer working on on hybrid modeling to tackle challenges in process and product development. I got my undergraduate degree in Chemical Engineering from the University of Costa Rica, with an undergraduate thesis on reactor engineering for advanced oxidation processes for wastewater treatment. I worked worked as a lecturer for the School of Chemical Engineering at the University of Costa Rica, teaching statistics, thermodynamics, and reaction kinetics. I received the degree of Ph.D. in Chemical Engineering from Louisiana State University. My dissertation work studied hybrid modeling for the understanding and optimization of electrochemical systems. 
 
-I also the co-author of AI in Chemical Engineering: Unlocking the power within data.
+I am also the co-author of [AI in Chemical Engineering: Unlocking the Power Within Data](https://www.taylorfrancis.com/books/mono/10.1201/9781003455905/ai-chemical-engineering-josé-romagnoli-luis-briceño-mena-vidhyadhar-manee).
 
 Areas of interest
 ======
