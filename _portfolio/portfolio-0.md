@@ -1,9 +1,11 @@
 ---
-title: "PEMNET"
-excerpt: "<br/><img src='/images/pemnet.png'>"
+title: "AI in Chemical Engineering: Unlocking the Power Within Data"
+excerpt: "<br/><img src='/images/9781003455905.jpg'>"
 collection: portfolio
 ---
-PEMNET
-======
-Widespread adoption of high-temperature electrochemical systems such as polymer electrolyte membrane fuel cells (HT-PEMFCs) requires models and computational tools for accurate optimization and guiding new materials for enhancing fuel cell performance and durability. While robust and better suited for extrapolation, knowledge-based modeling has limitations as it is time consuming and requires information about the system that is not always available (e.g., material properties and interfacial behavior between different materials). Data-driven modeling on the other hand, is easier to implement, but often necessitates large datasets that could be difficult to obtain. In this contribution, knowledge-based modeling and data-driven modeling are combined by implementing a Few-Shot Learning (FSL) approach. A knowledge-based model originally developed for a HT-PEMFC was used to generate simulated data (887,735 points) and used to pretrain a neural network source model tuned via a genetic algorithm-based AutoML. 
 
+AI in Chemical Engineering: Unlocking the Power Within Data
+======
+Industry 4.0 is revolutionizing chemical manufacturing. Today's chemical companies are swiftly embracing the digital era, recognizing the significant benefits of interconnected products, production equipment, and personnel. As technology advances and production volumes grow, there is an increasing need for new computational tools and innovative solutions to address everyday challenges. AI in Chemical Engineering: Unlocking the Power Within Data introduces readers to the essential concepts of machine learning and their application in the chemical and process industries, aiming to enhance efficiency, adaptability, and profitability. This work delves into the transformation of traditional plant operations into integrated and intelligent systems, providing readers with a foundation for developing and understanding the tools necessary for data collection and analysis, thereby gaining valuable insights and practical applications.
+
+This practical text, designed for advanced chemical engineering students and industry practitioners, introduces concepts and theories in a logical and sequential manner. It serves as an essential resource, helping readers understand both current and emerging developments in this important and evolving field.
