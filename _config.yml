@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Luis Briceno-Mena"
 title_separator          : "-"
 name                     : &name "Luis Briceno-Mena"
-description              : &description "PhD Student"
+description              : &description "Chemical Engineer"
 url                      : https://lbrice1.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : 
 facebook:
   username               :
   app_id                 :
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Luis Briceno-Mena"
   avatar           : "profile.jpg"
-  bio              : "PhD student at LSU"
+  bio              : "Chemical Engineer"
   location         : "Baton Rouge, LA, US"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
@@ -109,7 +109,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "@Luisalejbm"
+  twitter          : 
   vine             :
   weibo            :
   xing             :
