@@ -8,20 +8,15 @@ redirect_from:
   - /about.html
 ---
 
-I am a Chemical Engineer working on on hybrid modeling to tackle challenges in process and product development. I got my undergraduate degree in Chemical Engineering from the University of Costa Rica, with an undergraduate thesis on reactor engineering for advanced oxidation processes for wastewater treatment. I worked as a lecturer for the School of Chemical Engineering at the University of Costa Rsica, teaching statistics, thermodynamics, and reaction kinetics. I received the degree of Ph.D. in Chemical Engineering from Louisiana State University. My dissertation work studied hybrid modeling for the understanding and optimization of electrochemical systems. 
-
-I am also the co-author of [AI in Chemical Engineering: Unlocking the Power Within Data](https://www.taylorfrancis.com/books/mono/10.1201/9781003455905/ai-chemical-engineering-josé-romagnoli-luis-briceño-mena-vidhyadhar-manee).
+I am Luis A. Briceno-Mena, a researcher working at the intersection of materials science, process systems engineering, and artificial intelligence. My work focuses on developing physics-informed AI methods that combine scientific principles with data-driven modeling to accelerate the design and manufacturing of advanced materials. I am particularly interested in computational frameworks that link high fidelity simulations, process data, and machine learning to create predictive and interpretable models for polymers, formulated products, and sustainable manufacturing systems. I am also interested in how multimodal learning and physics-aware representations can guide materials discovery and ensure reliable, scalable production.
 
 Areas of interest
 ======
-1. Multiscale modeling
-2. Hybrid Modeling & Scientific AI
-3. Machine Learning-based surrogate modeling
-4. Transfer Learning for data-driven modeling with scarce availability of data
-5. Systems design and optimization
+1. **Physics-Informed Artificial Intelligence** – Developing AI and machine learning models that embed physical and chemical principles to ensure interpretability, feasibility, and safe extrapolation in materials and process modeling.
+2. **Multiscale Simulation** – Integrating high fidelity simulatoins and plant-scale process data into unified frameworks for predictive design and optimization of materials and manufacturing systems.
+3. **Data Representations and Multimodal Learning** – Creating computational representations that capture the complexity of polymers and formulated products through graphs, signals, and images to enable data fusion and discovery.
+4. **Sustainable and Intelligent Manufacturing** – Applying AI-driven process systems engineering to enhance energy efficiency, circularity, and resilience in industrial manufacturing and materials production.
 
-Research
-------
-The integration of Artificial Intelligence (AI) into Chemical Engineering presents an opportunity to enhance process efficiency, accelerate materials discovery, and optimize industrial operations. My research focuses on leveraging AI-driven approaches, including machine learning, hybrid modeling, and optimization, to tackle complex challenges in chemical processes. By combining fundamental chemical engineering principles with state-of-the-art computational techniques, I aim to develop innovative solutions that advance both theoretical understanding and practical applications in the field.
+
 
 
