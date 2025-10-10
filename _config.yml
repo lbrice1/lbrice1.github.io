@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Luis Briceno-Mena"
 title_separator          : "-"
 name                     : &name "Luis Briceno-Mena"
-description              : &description "Chemical Engineer"
+description              : &description "Researcher working at the intersection of materials science, process systems engineering, and artificial intelligence."
 url                      : https://lbrice1.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Luis Briceno-Mena"
   avatar           : "profile.jpg"
-  bio              : "Chemical Engineer"
+  bio              : "Researcher working at the intersection of materials science, process systems engineering, and artificial intelligence."
   location         : "Lawrence, NJ, US"
   employer         : 
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?user=5VFIGQoAAAAJ&hl=es"
-  email            : "lbrice1@lsu.edu"
+  email            : 
   researchgate     :  "https://www.researchgate.net/profile/Luis-Briceno-Mena"
   uri              :
   bitbucket        :
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/luis-alejandro-brice%C3%B1o-mena-2a472a3a/"
+  linkedin         : "https://www.linkedin.com/in/luisbricenomena/"
   orcid            : "https://orcid.org/0000-0003-3684-4232"
   pinterest        :
   soundcloud       :
