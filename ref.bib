@@ -1,0 +1,453 @@
+%
+% Romagnoli, J. A., Briceno-Mena, L., & Manee, V. (2024). AI in Chemical Engineering - Unlocking the Power Within Data. CRC Press.
+
+% Schmidt, A., Briceno-Mena, L., Rajagopalan, S., Ma, K., Reiner, B., & Braun, B. (2024). Introduction to Formulation Optimization. In A. Schmidt & K. Wallace (Eds.), The Digital Transformation of Product Formulation. CRC Press.
+
+% Chiang, L., Christiansen, D., Malloure, M., Briceno-Mena, L. A., & Kim, S. H. (Under review). Artificial Intelligence at Scale in the Chemical Industry: From Legacy to Leadership. Current Opinion in Chemical Engineering.
+
+% Mukhopahyay, S., Christiansen, D., Briceno-Mena, L.A., Pradhan, A., Aguirre, F., & Cookson, P. (Under review). Driving Innovation of Formulated Products with DOW Predictive Intelligence. Molecular Systems Design & Engineering.
+
+% Arense-Feffin, E., Sagar, N., Briceno-Mena, L. A., Braun, B., Castillo, I., Rizzo, C., Bui, L., Xu, J., Chiang, L., & Braatz, R. (Under review). The Incorporation of Qualitative Knowledge in Hybrid Modeling. Computers & Chemical Engineering.
+
+% Rahnama, A., Vaithiyanathan, M., Briceno-Mena, L., Dugas, T. M., Yates, K. L., Romagnoli, J. A., & Melvin, A. T. (2024). A microfluidic approach to study variations in Chlamydomonas reinhardtii alkaline phosphatase activity in response to phosphate availability. Analyst, 149, 4256-4266. https://doi.org/10.1039/D4AN00619D
+
+% Olayiwola, T., Briceno-Mena, L. A., Arges, C. G., & Romagnoli, J. A. (2024). Synergizing data-driven and knowledge-based hybrid models for ionic separations. ACS ES&T Engineering, 4. https://doi.org/10.1021/acsestengg.4c00405
+
+% Arunagiri, K., Wong, A. J., Briceno-Mena, L., Elsayed, H. M. G. H., Romagnoli, J. A., Janik, M. J., & Arges, C. G. (2023). Deconvoluting charge-transfer, mass transfer, and ohmic resistances in phosphonic acid–sulfonic acid ionomer binders used in electrochemical hydrogen pumps. Energy & Environmental Science, 16(12), 5916-5932. https://doi.org/10.1039/D3EE01776A
+
+% Seghers, E. E., Briceno-Mena, L. A., & Romagnoli, J. A. (2023). Unsupervised learning: Local and global structure preservation in industrial data. Computers & Chemical Engineering, 178, 108378. https://doi.org/10.1016/j.compchemeng.2023.108378
+
+% Gallage Dona, H. K., Olayiwola, T., Briceno-Mena, L. A., Arges, C. G., Kumar, R., & Romagnoli, J. A. (2023). Determining Ion Activity Coefficients in Ion-Exchange Membranes with Machine Learning and Molecular Dynamics Simulations. Industrial & Engineering Chemistry Research, 62(24), 9533-9548. https://doi.org/10.1021/acs.iecr.3c00636
+
+% Briceno-Mena, L. A., Arges, C. G., & Romagnoli, J. A. (2023). Machine learning-based surrogate models and transfer learning for derivative free optimization of HT-PEM fuel cells. Computers & Chemical Engineering, 171, 108159. https://doi.org/10.1016/j.compchemeng.2023.108159
+
+% Webb, Z. T., Nnadili, M., Seghers, E. E., Briceno-Mena, L. A., & Romagnoli, J. A. (2022). Optimization of multi-mode classification for process monitoring. Frontiers in Chemical Engineering, 4. https://doi.org/10.3389/fceng.2022.900083
+
+% Briceno-Mena, L. A., Nnadili, M., Benton, M. G., & Romagnoli, J. A. (2022). Data mining and knowledge discovery in chemical processes: Effect of alternative processing techniques. Data-Centric Engineering, 3. https://doi.org/10.1017/dce.2022.21
+
+% Venugopalan, G., Bhattacharya, D., Andrews, E., Briceno-Mena, L., Romagnoli, J., Flake, J., & Arges, C. G. (2022). Electrochemical Pumping for Challenging Hydrogen Separations. ACS Energy Letters, 7(4), 1322-1329. https://doi.org/10.1021/acsenergylett.1c02853
+
+% Briceno-Mena, L. A., Romagnoli, J. A., & Arges, C. G. (2022). PemNet: A Transfer Learning-Based Modeling Approach of High-Temperature Polymer Electrolyte Membrane Electrochemical Systems. Industrial & Engineering Chemistry Research, 61(9), 3350-3357. https://doi.org/10.1021/acs.iecr.1c04237
+
+% Briceno-Mena, L. A., Venugopalan, G., Romagnoli, J. A., & Arges, C. G. (2021). Machine learning for guiding high-temperature PEM fuel cells with greater power density. Patterns, 2(2), 100187. https://doi.org/10.1016/j.patter.2020.100187
+
+% Briceño Mena, L., & Durán Herrera, E. (2020). Heterogeneous Catalytic Ozonation of Phenol over Iron-based Catalysts in a Trickle Bed Reactor. Revista Ingeniería, 30(2), 1-13. https://doi.org/10.15517/ri.v30i2.39236
+
+% Gallage Dona, H. K., Olayiwola, T., Briceno-Mena, L. A., Arges, C. G., Kumar, R., & Romagnoli, J. A. (2023). Feature Embedding of Molecular Dynamics-Based Descriptors for Modeling Electrochemical Separation Processes. In 33rd European Symposium on Computer Aided Process Engineering (ESCAPE33), Athens, Greece.
+
+% Briceno-Mena, L. A., Webb, Z. T., & Romagnoli, J. A. (2022). Process Monitoring Optimization Via Unsupervised Clustering Metrics. In 2022 AIChE Annual Meeting, Phoenix, Arizona.
+
+% Olayiwola, T., Briceno-Mena, L., Kulkarni, T., Arges, C., Kumar, R., & Romagnoli, J. A. (2024). Automated Synthesis of Hybrid Models for Ionic Separations. In 2024 AIChE Annual Meeting, Orlando, Florida.
+
+% Briceno-Mena, L. A., Arges, C. G., & Romagnoli, J. A. (2022). Machine Learning-Based Surrogate Models and Transfer Learning for Derivative Free Optimization of HTPEM Fuel Cells. In 32nd European Symposium on Computer Aided Process Engineering (ESCAPE32), Toulouse, France.
+
+% Arges, C. G., Ramos-Garcés, M., Lei, Q., Jordan, M., Senadheera, D., Li, K., Kumar, R., Briceno-Mena, L. A., & Romagnoli, J. A. (2022). Bridging the length scales in ionic separations via data-driven science and machine learning. In APS March Meeting Abstracts, Y19.009.
+
+% Venugopalan, G., Briceno-Mena, L. A., Bhattacharya, D., Romagnoli, J. A., & Arges, C. G. (2021). Electrochemical Properties of High-Temperature Polymer Electrolyte Thin Films. In ECS Meeting Abstracts, 38, 1191.
+
+% Duran, E., Garcia, W., & Briceno, L. (2017). Iron- and Manganese-modified Diatomite as Catalyst for Ozonation of Wastewater. In 23rd International Ozone Association World Congress, Washington, D.C.
+
+% Briceno, L., & Duran, E. (2017). Heterogeneous Catalytic Ozonation of Phenol in a Trickle Bed Reactor over Fe (II) Based Catalysts. In 23rd International Ozone Association World Congress, Washington, D.C.
+
+% Briceno, L., & Duran, E. (2015). Use of a trickle bed reactor for heterogeneous catalytic ozonation of phenol. In 22nd International Ozone Association World Congress, Barcelona.
+
+% Briceno-Mena, L. A. (2024, March). A practitioner's Guide to Machine Learning Applications in Chemical Engineering. AIChE Spring Meeting, New Orleans, Louisiana.
+
+% Briceno-Mena, L. A. (2021, October). Machine Learning for Accelerating Materials Development for Electrochemical Systems: Fuel Cells and Electrochemical Separations. Telluride Science Research Center Workshop, Telluride, Colorado.
+
+% Briceno-Mena, L. A. (2021, August). IA+PSE 10 Lecciones Aprendidas. Facultad de Ciencias Naturales y Matematicas, ESPOL, Ecuador.
+
+% Briceno-Mena, L. A. (2020, January). Modelado, Optimizacion, y Control en Ingenieria Quimica via Aprendizaje Automatico. Facultad de Ciencias Naturales y Matematicas, ESPOL, Ecuador.
+
+% Briceno-Mena, L. A. (2020, November). Modelado, Optimizacion, y Control en Ingenieria Quimica via Aprendizaje Automatico. AIChE Student Chapter Universidad de Costa Rica, Costa Rica.
+
+% Briceno-Mena, L. A. (2021, September). Inteligencia Artificial y Simulacion en Ingenieria Quimica: Ampliando los Horizontes del Diseno y la Optimizacion. PROCESA 3rd AIChE Colombia Student Regional Conference, Colombia.
+
+% Olayiwola, T., Briceno-Mena, L. A., Kulkarni, T., Arges, C. G., Kumar, R., & Romagnoli, J. A. (2023, November). Automated Synthesis of Hybrid Models for Ionic Separations. 2023 AIChE Annual Meeting, Orlando, Florida, U.S.
+
+% Briceno-Mena, L. A., Arges, C. G., & Romagnoli, J. A. (2023, July). Three-body problem: Small Data, Interpretation and Extrapolation in ML. FOPAM 2023, UC Davis, California, U.S. In Foundations of Process-product Analytics and Machine Learning.
+% Books
+% #########################################################
+@book{Romagnoli2025,
+    author = {Romagnoli, J. A. and \textbf{Briceno-Mena, L.} and Manee, V.},
+    title = {AI in Chemical Engineering - Unlocking the Power Within Data},
+    publisher = {CRC Press},
+    year = {2024},
+    month = {12},
+    isbn = {9781003455905},
+    edition = {1st},
+    keywords = {B}
+}
+
+@book{Schmidt2024,
+    author = {Alix Schmidt and \textbf{Luis Briceno-Mena} and Sreekanth Rajagopalan and Kaiwen Ma and Benjamin Reiner and Birgit Braun},
+    title = {Introduction to Formulation Optimization},
+    booktitle = {The Digital Transformation of Product Formulation},
+    editor = {Alix Schmidt and Kristin Wallace},
+    year = {2024},
+    month = {8},
+    publisher = {CRC Press},
+    isbn = {9781003385974},
+    keywords = {B}
+}
+
+
+% Journals
+% #########################################################
+
+@article{COCE,
+    author = {Chiang, Leo and Christiansen, Daniel and Malloure, Matthew and \textbf{Briceno-Mena, L. A.} and Kim, Sun Hye},
+    title = {Artificial Intelligence at Scale in the Chemical Industry: From Legacy to Leadership},
+    journal = {Current Opinion in Chemical Engineering},
+    volume = {(Under review)},
+    pages = {},
+    year = {},
+    month = {},
+    doi = {},
+    keywords = {J}
+}   
+
+@article{DOW2024,
+    author = {Mukhopahyay, Sukrit and Christiansen, Daniel and \textbf{Briceno-Mena, L.A.} and Pradhan, A. and Aguirre, F. and Cookson, Paul},
+    title = {Driving Innovation of Formulated Products with DOW Predictive Intelligence},
+    journal = {Molecular Systems Design \& Engineering},
+    volume = {(Under review)},
+    pages = {},
+    year = {},
+    month = {},
+    doi = {},
+    keywords = {J}
+}   
+
+@article{CACHEElia,
+    author = {Arense-Feffin, Elia and Sagar, Nidhish and \textbf{Briceno-Mena, L. A.} and Braun, Birgit and Castillo, Ivan and Rizzo, Caterina and Bui, Linh and Xu, Jinsuo and Chiang, Leo and Braatz, Richard},
+    title = {The Incorporation of Qualitative Knowledge in Hybrid Modeling},
+    journal = {Computers \& Chemical Engineering},
+    volume = {(Under review)},
+    pages = {},
+    year = {},
+    month = {},
+    doi = {},
+    keywords = {J}
+}   
+
+@article{Rahnama2024,
+    author = {Rahnama, A. and Vaithiyanathan, M. and \textbf{Briceno-Mena, L.} and Dugas, T. M. and Yates, K. L. and Romagnoli, J. A. and Melvin, A. T.},
+    title = {A microfluidic approach to study variations in Chlamydomonas reinhardtii alkaline phosphatase activity in response to phosphate availability},
+    journal = {Analyst},
+    volume = {149},
+    pages = {4256-4266},
+    year = {2024},
+    month = {12},
+    doi = {10.1039/D4AN00619D},
+    keywords = {J}
+}
+
+@article{Olayiwola2024,
+    author = {Olayiwola, T. and \textbf{Briceno-Mena, L. A.} and Arges, C. G. and Romagnoli, J. A.},
+    title = {Synergizing data-driven and knowledge-based hybrid models for ionic separations},
+    journal = {ACS ES\&T Engineering},
+    volume = {4},
+    year = {2024},
+    month = {12},
+    doi = {10.1021/acsestengg.4c00405},
+    keywords = {J}
+}
+
+@article{Arunagiri2023,
+    author = {Arunagiri, K. and Wong, A. J. and \textbf{Briceno-Mena, L.} and Elsayed, H. M. G. H. and Romagnoli, J. A. and Janik, M. J. and Arges, C. G.},
+    title = {Deconvoluting charge-transfer, mass transfer, and ohmic resistances in phosphonic acid–sulfonic acid ionomer binders used in electrochemical hydrogen pumps},
+    journal = {Energy \& Environmental Science},
+    volume = {16},
+    number = {12},
+    pages = {5916-5932},
+    year = {2023},
+    doi = {10.1039/D3EE01776A},
+    keywords = {J}
+}
+
+@article{Seghers2023,
+    author = {Seghers, E. E. and \textbf{Briceno-Mena, L. A.} and Romagnoli, J. A.},
+    title = {Unsupervised learning: Local and global structure preservation in industrial data},
+    journal = {Computers \& Chemical Engineering},
+    volume = {178},
+    pages = {108378},
+    year = {2023},
+    month = {10},
+    doi = {10.1016/j.compchemeng.2023.108378},
+    keywords = {J}
+}
+
+@article{GallageDona2023,
+    author = {Gallage Dona, H. K. and Olayiwola, T. and \textbf{Briceno-Mena, L. A.} and Arges, C. G. and Kumar, R. and Romagnoli, J. A.},
+    title = {Determining Ion Activity Coefficients in Ion-Exchange Membranes with Machine Learning and Molecular Dynamics Simulations},
+    journal = {Industrial \& Engineering Chemistry Research},
+    volume = {62},
+    number = {24},
+    pages = {9533-9548},
+    year = {2023},
+    month = {6},
+    doi = {10.1021/acs.iecr.3c00636},
+    keywords = {J}
+}
+
+@article{BricenoMena2023i,
+    author = {\textbf{Briceno-Mena, L. A.} and Arges, C. G. and Romagnoli, J. A.},
+    title = {Machine learning-based surrogate models and transfer learning for derivative free optimization of HT-PEM fuel cells},
+    journal = {Computers \& Chemical Engineering},
+    volume = {171},
+    pages = {108159},
+    year = {2023},
+    month = {3},
+    doi = {10.1016/j.compchemeng.2023.108159},
+    keywords = {J}
+}
+
+@article{Webb2022,
+    author = {Webb, Z. T. and Nnadili, M. and Seghers, E. E. and \textbf{Briceno-Mena, L. A.} and Romagnoli, J. A.},
+    title = {Optimization of multi-mode classification for process monitoring},
+    journal = {Frontiers in Chemical Engineering},
+    volume = {4},
+    year = {2022},
+    month = {8},
+    doi = {10.3389/fceng.2022.900083},
+    keywords = {J}
+}
+
+@article{BricenoMena2022h,
+    author = {\textbf{Briceno-Mena, L. A.} and Nnadili, M. and Benton, M. G. and Romagnoli, J. A.},
+    title = {Data mining and knowledge discovery in chemical processes: Effect of alternative processing techniques},
+    journal = {Data-Centric Engineering},
+    volume = {3},
+    year = {2022},
+    doi = {10.1017/dce.2022.21},
+    keywords = {J}
+}
+
+@article{Venugopalan2022,
+    author = {Venugopalan, G. and Bhattacharya, D. and Andrews, E. and \textbf{Briceno-Mena, L.} and Romagnoli, J. and Flake, J. and Arges, C. G.},
+    title = {Electrochemical Pumping for Challenging Hydrogen Separations},
+    journal = {ACS Energy Letters},
+    volume = {7},
+    number = {4},
+    pages = {1322-1329},
+    year = {2022},
+    month = {3},
+    doi = {10.1021/acsenergylett.1c02853},
+    keywords = {J}
+}
+
+@article{BricenoMena2022g,
+    author = {\textbf{Briceno-Mena, L. A.} and Romagnoli, J. A. and Arges, C. G.},
+    title = {PemNet: A Transfer Learning-Based Modeling Approach of High-Temperature Polymer Electrolyte Membrane Electrochemical Systems},
+    journal = {Industrial \& Engineering Chemistry Research},
+    volume = {61},
+    number = {9},
+    pages = {3350-3357},
+    year = {2022},
+    month = {2},
+    doi = {10.1021/acs.iecr.1c04237},
+    keywords = {J}
+}
+
+@article{BricenoMena2021f,
+    author = {\textbf{Briceno-Mena, L. A.} and Venugopalan, G. and Romagnoli, J. A. and Arges, C. G.},
+    title = {Machine learning for guiding high-temperature PEM fuel cells with greater power density},
+    journal = {Patterns},
+    volume = {2},
+    number = {2},
+    pages = {100187},
+    year = {2021},
+    doi = {10.1016/j.patter.2020.100187},
+    keywords = {J}
+}
+
+@article{BricenoMena2020e,
+    author = {\textbf{Briceño Mena, L.} and Durán Herrera, E.},
+    title = {Heterogeneous Catalytic Ozonation of Phenol over Iron-based Catalysts in a Trickle Bed Reactor},
+    journal = {Revista Ingeniería},
+    volume = {30},
+    number = {2},
+    pages = {1-13},
+    year = {2020},
+    month = {4},
+    doi = {10.15517/ri.v30i2.39236},
+    keywords = {J}
+}
+
+
+% Conferences
+% #########################################################
+
+
+@inproceedings{GallageDona2023a,
+    author = {Gallage Dona, H. K. and Olayiwola, T. and \textbf{Briceno-Mena, L. A.} and Arges, C. G. and Kumar, R. and Romagnoli, J. A.},
+    title = {Feature Embedding of Molecular Dynamics-Based Descriptors for Modeling Electrochemical Separation Processes},
+    booktitle = {33rd European Symposium on Computer Aided Process Engineering (ESCAPE33)},
+    year = {2023},
+    month = 6,
+    address = {Athens, Greece},
+    keywords = {C}
+}
+
+@inproceedings{BricenoMena2022e,
+    author = {\textbf{Briceno-Mena, L. A.} and Webb, Z. T. and Romagnoli, J. A.},
+    title = {Process Monitoring Optimization Via Unsupervised Clustering Metrics},
+    booktitle = {2022 AIChE Annual Meeting},
+    year = {2022},
+    month = nov,
+    address = {Phoenix, Arizona},
+    keywords = {C}
+}
+
+@inproceedings{Olayiwola2024f,
+    author = {Olayiwola, T. and Briceno-Mena, L. and Kulkarni, T. and Arges, C. and Kumar, R. and Romagnoli, J. A.},
+    title = {Automated Synthesis of Hybrid Models for Ionic Separations},
+    booktitle = {2024 AIChE Annual Meeting},
+    year = {2024},
+    month = mar,
+    address = {Orlando, Florida},
+    keywords = {C}
+}
+
+@inproceedings{BricenoMena2022d,
+    author = {\textbf{Briceno-Mena, L. A.} and Arges, C. G. and Romagnoli, J. A.},
+    title = {Machine Learning-Based Surrogate Models and Transfer Learning for Derivative Free Optimization of HTPEM Fuel Cells},
+    booktitle = {32nd European Symposium on Computer Aided Process Engineering (ESCAPE32)},
+    year = {2022},
+    month = jun,
+    address = {Toulouse, France},
+    keywords = {C}
+}
+
+@inproceedings{Arges2022,
+    author = {Arges, C. G. and Ramos-Garcés, M. and Lei, Q. and Jordan, M. and Senadheera, D. and Li, K. and Kumar, R. and \textbf{Briceno-Mena, L. A.} and Romagnoli, J. A.},
+    title = {Bridging the length scales in ionic separations via data-driven science and machine learning},
+    booktitle = {APS March Meeting Abstracts},
+    year = {2022},
+    volume = {Y19.009},
+    keywords = {C}
+}
+
+@inproceedings{Venugopalan2021,
+    author = {Venugopalan, G. and \textbf{Briceno-Mena, L. A.} and Bhattacharya, D. and Romagnoli, J. A. and Arges, C. G.},
+    title = {Electrochemical Properties of High-Temperature Polymer Electrolyte Thin Films},
+    booktitle = {ECS Meeting Abstracts},
+    year = {2021},
+    volume = {38},
+    pages = {1191},
+    keywords = {C}
+}
+
+@inproceedings{Duran2017,
+    author = {Duran, E. and Garcia, W. and \textbf{Briceno, L.}},
+    title = {Iron- and Manganese-modified Diatomite as Catalyst for Ozonation of Wastewater},
+    booktitle = {23rd International Ozone Association World Congress},
+    year = {2017},
+    month = {8},
+    address = {Washington, D.C.},
+    keywords = {C}
+}
+
+@inproceedings{Briceno2017,
+    author = {\textbf{Briceno, L.} and Duran, E.},
+    title = {Heterogeneous Catalytic Ozonation of Phenol in a Trickle Bed Reactor over Fe (II) Based Catalysts},
+    booktitle = {23rd International Ozone Association World Congress},
+    year = {2017},
+    month = {8},
+    address = {Washington, D.C.},
+    keywords = {C}
+}
+
+@inproceedings{Briceno2015,
+    author = {\textbf{Briceno, L.} and Duran, E.},
+    title = {Use of a trickle bed reactor for heterogeneous catalytic ozonation of phenol},
+    booktitle = {22nd International Ozone Association World Congress},
+    year = {2015},
+    month = {8},
+    address = {Barcelona},
+    keywords = {C}
+}
+
+
+% Talks
+% #########################################################
+
+
+
+
+@misc{Talk3,
+    title = {A practitioner's Guide to Machine Learning Applications in Chemical Engineering},
+    author = {\textbf{Briceno-Mena, L. A.}},
+    howpublished = {\ul{AIChE Spring Meeting} (New Orleans, Louisiana)},
+    month = mar,
+    year = {2024},
+    keywords = {T}
+}
+
+@misc{Talk4,
+    title = {Machine Learning for Accelerating Materials Development for Electrochemical Systems: Fuel Cells and Electrochemical Separations},
+    author = {\textbf{Briceno-Mena, L. A.}},
+    howpublished = {\ul{Telluride Science Research Center Workshop} (Telluride, Colorado)},
+    month = oct,
+    year = {2021},
+    keywords = {T}
+}
+
+@misc{Talk5,
+    title = {IA+PSE 10 Lecciones Aprendidas},
+    author = {\textbf{Briceno-Mena, L. A.}},
+    howpublished = {\ul{Facultad de Ciencias Naturales y Matematicas, ESPOL} (Ecuador)},
+    month = aug,
+    year = {2021},
+    keywords = {T}
+}
+
+@misc{Talk6,
+    title = {Modelado, Optimizacion, y Control en Ingenieria Quimica via Aprendizaje Automatico},
+    author = {\textbf{Briceno-Mena, L. A.}},
+    howpublished = {\ul{Facultad de Ciencias Naturales y Matematicas, ESPOL} (Ecuador)},
+    month = jan,
+    year = {2020},
+    keywords = {T}
+}
+
+@misc{Talk7,
+    title = {Modelado, Optimizacion, y Control en Ingenieria Quimica via Aprendizaje Automatico},
+    author = {\textbf{Briceno-Mena, L. A.}},
+    howpublished = {\ul{AIChE Student Chapter Universidad de Costa Rica} (Costa Rica)},
+    month = nov,
+    year = {2020},
+    keywords = {T}
+}
+
+@misc{Talk8,
+    title = {Inteligencia Artificial y Simulacion en Ingenieria Quimica: Ampliando los Horizontes del Diseno y la Optimizacion},
+    author = {\textbf{Briceno-Mena, L. A.}},
+    howpublished = {\ul{PROCESA 3rd AIChE Colombia Student Regional Conference} (Colombia)},
+    month = sep,
+    year = {2021},
+    keywords = {T}
+}
+
+% Posters
+% #########################################################
+
+@misc{Teslimposter2024,
+    author = {Olayiwola, T. and \textbf{Briceno-Mena, L. A.} and Kulkarni, T.  and Arges, C. G. and Kumar, R. and Romagnoli, J. A.},
+    title = {Automated Synthesis of Hybrid Models for Ionic Separations},
+    howpublished = {\ul{2023 AIChE Annual Meeting} (Orlando, Florida, U.S.)},
+    year = {2023},
+    month = nov,
+    keywords = {P}
+}
+
+@misc{BricenoMena2023c,
+    author = {\textbf{Briceno-Mena, L. A.} and Arges, C. G. and Romagnoli, J. A.},
+    title = {Three-body problem: Small Data, Interpretation and Extrapolation in ML},
+    howpublished = {\ul{FOPAM 2023} (UC Davis, California, U.S.)},
+    booktitle = {Foundations of Process-product Analytics and Machine Learning},
+    year = {2023},
+    month = jul,
+    keywords = {P}
+}

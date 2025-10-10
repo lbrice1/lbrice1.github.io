@@ -1,9 +1,10 @@
 ---
-title: "SimWiz (contributor)"
-excerpt: "<br/><img src='/images/swcomp.png'>"
+title: "HElioS — Hybrid Modeling for Electrochemical Systems"
+excerpt: "<br/><img src='/images/abstract.png'>"
 collection: portfolio
 ---
-SimWiz
+HelioS
 ======
-SimWiz is an interactive platform containing a suite of virtual plants ranging from single units and plant sections to full processing plants. Developed in Python and powered by an industry standard process simulator, SimWiz emulates a DCS environment to operate and visualize chemical plants in different scenarios, as well as easily collect and analyze data. The user interface is fully menu-based so that users are not required to have any knowledge of a specific programming language. Because of its modularity, SimWiz can be used across the entire Chemical Engineering curricula.
+
+HElioS is a Python package for building, training, and evaluating hybrid physics‑informed and data‑driven models for electrochemical systems and materials design. It provides data preprocessing utilities, model architectures, training loops, optimization helpers, and plotting/post‑processing tools to accelerate research workflows in computational electrochemistry and materials science. HElioS includes features like modular model architectures for combining physics-based and learned components, data preprocessing and range checking utilities, device- and materials-focused trainers and optimizers, and plotting and post-processing helpers for analysis and visualization.
 
