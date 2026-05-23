@@ -11,3 +11,5 @@ Industry 4.0 is revolutionizing chemical manufacturing. Today's chemical compani
 This practical text, designed for advanced chemical engineering students and industry practitioners, introduces concepts and theories in a logical and sequential manner. It serves as an essential resource, helping readers understand both current and emerging developments in this important and evolving field.
 
 [Example code repository on GitHub](https://github.com/lbrice1/ai_cheme_examples)
+
+[View full book page with chapter materials &rarr;](/book/)
