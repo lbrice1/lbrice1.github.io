@@ -52,7 +52,9 @@
 
   h2 {
     padding-bottom: 0.5em;
-    border-bottom: 1px solid $border-color;
+    padding-left: 0.6em;
+    border-bottom: none;
+    border-left: 4px solid $info-color;
   }
 
   p, li, dl {

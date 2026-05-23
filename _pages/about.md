@@ -3,6 +3,10 @@ permalink: /
 title: "About Luis"
 excerpt: "About me"
 author_profile: true
+header:
+  overlay_color: "#0f2d52"
+  overlay_filter: "0.6"
+  tagline: "Physics-Informed AI · Materials Science · Process Systems Engineering"
 redirect_from: 
   - /about/
   - /about.html
