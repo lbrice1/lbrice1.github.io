@@ -6,4 +6,7 @@ permalink: /talks/2023-01-01-feature-embedding-of-molecular-dynamics-based-descr
 venue: "33rd European Symposium on Computer Aided Process Engineering (ESCAPE33)"
 date: 2023-01-01
 location: "Athens, Greece"
+topics:
+  - ionic-separations
+  - machine-learning
 ---

@@ -7,8 +7,133 @@ author_profile: true
 
 {% include base_path %}
 
+<style>
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5em;
+  margin-top: 1em;
+}
+.portfolio-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .2s;
+}
+.portfolio-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.10); }
+.portfolio-card__image {
+  height: 190px;
+  overflow: hidden;
+  background: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.portfolio-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.portfolio-card__body {
+  padding: 1em 1.1em 0.9em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 0.72em;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5em;
+  white-space: nowrap;
+}
+.portfolio-badge--book     { background: #b07aa1; }
+.portfolio-badge--package  { background: #4e79a7; }
+.portfolio-badge--software { background: #59a14f; }
+.portfolio-card__title {
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0 0 0.5em;
+  line-height: 1.3;
+}
+.portfolio-card__title a { color: inherit; text-decoration: none; }
+.portfolio-card__title a:hover { text-decoration: underline; }
+.portfolio-card__desc {
+  font-size: 0.88em;
+  color: #444;
+  line-height: 1.5;
+  flex: 1;
+  margin: 0 0 0.9em;
+}
+.portfolio-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: auto;
+}
+.portfolio-link-btn {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .15s;
+}
+.portfolio-link-btn:hover { background: #f0f0f0; text-decoration: none; }
+.portfolio-link-btn--primary {
+  background: #4e79a7;
+  border-color: #4e79a7;
+  color: #fff;
+}
+.portfolio-link-btn--primary:hover { background: #3d618a; }
+</style>
 
+<div class="portfolio-grid">
 {% for post in site.portfolio %}
-  {% include archive-single.html %}
+  {% if post.type == 'Book' %}
+    {% assign badge_class = 'portfolio-badge--book' %}
+  {% elsif post.type == 'Python Package' %}
+    {% assign badge_class = 'portfolio-badge--package' %}
+  {% else %}
+    {% assign badge_class = 'portfolio-badge--software' %}
+  {% endif %}
+
+  <div class="portfolio-card">
+    <div class="portfolio-card__image">
+      {{ post.excerpt }}
+    </div>
+    <div class="portfolio-card__body">
+      {% if post.type %}
+        <span class="portfolio-badge {{ badge_class }}">{{ post.type }}</span>
+      {% endif %}
+      <h2 class="portfolio-card__title">
+        <a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+      </h2>
+      {% if post.description %}
+        <p class="portfolio-card__desc">{{ post.description }}</p>
+      {% endif %}
+      <div class="portfolio-card__links">
+        <a href="{{ base_path }}{{ post.url }}" class="portfolio-link-btn portfolio-link-btn--primary">Details &rarr;</a>
+        {% if post.github %}
+          <a href="{{ post.github }}" class="portfolio-link-btn" target="_blank" rel="noopener">GitHub</a>
+        {% endif %}
+        {% if post.external %}
+          <a href="{{ post.external }}" class="portfolio-link-btn" target="_blank" rel="noopener">Book Page</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
 {% endfor %}
+</div>
 

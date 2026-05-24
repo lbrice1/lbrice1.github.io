@@ -6,4 +6,6 @@ permalink: /talks/2017-08-01-heterogeneous-catalytic-ozonation-of-phenol-in-a-tr
 venue: "23rd International Ozone Association World Congress"
 date: 2017-08-01
 location: "Washington, D.C., United States"
+topics:
+  - environmental-engineering
 ---

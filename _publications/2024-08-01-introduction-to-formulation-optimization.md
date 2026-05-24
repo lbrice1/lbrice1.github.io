@@ -7,5 +7,7 @@ date: '2024-08-01'
 venue: 'The Digital Transformation of Product Formulation'
 paperurl: ''
 citation: 'Schmidt, A., Briceno-Mena, L., Rajagopalan, S., Ma, K., Reiner, B., & Braun, B. (2024). Introduction to Formulation Optimization. In A. Schmidt & K. Wallace (Eds.), The Digital Transformation of Product Formulation. CRC Press.'
+topics:
+  - formulated-products
+  - ai-in-industry
 ---
-

@@ -1,6 +1,6 @@
 ---
 permalink: /book/
-title: "AI in Chemical Engineering"
+title: "AI in ChemE Book"
 excerpt: "Textbook, supplementary notebooks, and lecture slides"
 author_profile: true
 header:
