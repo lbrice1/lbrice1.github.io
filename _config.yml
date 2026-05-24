@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Luis Briceno-Mena"
 title_separator          : "-"
 name                     : &name "Luis Briceno-Mena"
-description              : &description ""
+description              : &description "Research scientist at the intersection of materials science, process systems engineering, and artificial intelligence. Develops physics-informed AI methods combining scientific principles with data-driven modeling to accelerate design of advanced materials and chemical processes."
 url                      : https://lbrice1.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Luis Briceno-Mena"
   avatar           : "profile.jpg"
-  bio              : ""
+  bio              : "Research scientist developing physics-informed AI for materials science and chemical process engineering."
   location         : "Lawrence, NJ, US"
   employer         : 
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"

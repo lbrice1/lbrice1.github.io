@@ -7,5 +7,7 @@ date: '1900-01-01'
 venue: 'Current Opinion in Chemical Engineering'
 paperurl: ''
 citation: 'Chiang, L., Christiansen, D., Malloure, M., Briceno-Mena, L. A., & Kim, S. H. (Under review). Artificial Intelligence at Scale in the Chemical Industry: From Legacy to Leadership. Current Opinion in Chemical Engineering.'
+topics:
+  - ai-in-industry
+  - machine-learning
 ---
-

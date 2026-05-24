@@ -6,4 +6,6 @@ permalink: /talks/2017-08-01-iron-and-manganese-modified-diatomite-as-catalyst-f
 venue: "23rd International Ozone Association World Congress"
 date: 2017-08-01
 location: "Washington, D.C., United States"
+topics:
+  - environmental-engineering
 ---

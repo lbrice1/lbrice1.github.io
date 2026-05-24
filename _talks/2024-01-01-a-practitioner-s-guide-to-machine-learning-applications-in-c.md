@@ -6,4 +6,7 @@ permalink: /talks/2024-01-01-a-practitioner-s-guide-to-machine-learning-applicat
 venue: "AIChE Spring Meeting"
 date: 2024-01-01
 location: "New Orleans, Louisiana, United States"
+topics:
+  - machine-learning
+  - ai-in-industry
 ---

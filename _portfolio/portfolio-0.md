@@ -1,7 +1,11 @@
 ---
 title: "AI in Chemical Engineering: Unlocking the Power Within Data"
-excerpt: "<br/><img src='/images/9781003455905.jpg'>"
+excerpt: "<img src='/images/book-cover-hires.jpg'>"
 collection: portfolio
+type: "Book"
+description: "Co-authored textbook introducing machine learning concepts and applications in chemical and process engineering. Designed for advanced students and industry practitioners; published by CRC Press / Taylor &amp; Francis (2024)."
+github: "https://github.com/lbrice1/ai_cheme_examples"
+external: "https://www.taylorfrancis.com/books/mono/10.1201/9781003455905/ai-chemical-engineering-josé-romagnoli-luis-briceño-mena-vidhyadhar-manee"
 ---
 
 AI in Chemical Engineering: Unlocking the Power Within Data

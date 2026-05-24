@@ -7,6 +7,139 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<style>
+.teach-stats { display:flex; gap:2.5em; margin:0.25em 0 2.2em; flex-wrap:wrap; }
+.teach-stat  { text-align:center; min-width:80px; }
+.teach-stat__num   { font-size:2em; font-weight:700; line-height:1.1; color:#333; }
+.teach-stat__label { font-size:0.75em; text-transform:uppercase; letter-spacing:.06em; color:#888; }
+
+.teach-card { border:1px solid #e0e0e0; border-radius:8px; overflow:hidden; margin-bottom:2em; }
+.teach-card__header { padding:0.9em 1.2em; }
+.teach-card__header h2 { margin:0 0 0.2em; font-size:1.15em; }
+.teach-card__meta { font-size:0.83em; opacity:0.85; }
+
+.teach-table { width:100%; border-collapse:collapse; }
+.teach-table thead tr { background:#f7f7f7; border-bottom:2px solid #e0e0e0; }
+.teach-table th { padding:0.5em 1em; font-size:0.75em; text-transform:uppercase;
+                  letter-spacing:.05em; color:#666; text-align:left; }
+.teach-table th.right { text-align:right; }
+.teach-table tbody tr { border-bottom:1px solid #f0f0f0; }
+.teach-table tbody tr:last-child { border-bottom:none; }
+.teach-table td { padding:0.6em 1em; font-size:0.92em; vertical-align:middle; }
+.teach-table td.when { text-align:right; color:#666; font-size:0.85em; white-space:nowrap; }
+
+.role-badge { display:inline-block; padding:2px 9px; border-radius:10px;
+              font-size:0.72em; font-weight:700; color:#fff; white-space:nowrap; }
+.role-lead    { background:#59a14f; }
+.role-ta      { background:#4e79a7; }
+.role-support { background:#f28e2b; }
+</style>
+
+<!-- Stats summary -->
+<div class="teach-stats">
+  <div class="teach-stat">
+    <div class="teach-stat__num">9</div>
+    <div class="teach-stat__label">Unique Courses</div>
+  </div>
+  <div class="teach-stat">
+    <div class="teach-stat__num">2</div>
+    <div class="teach-stat__label">Institutions</div>
+  </div>
+  <div class="teach-stat">
+    <div class="teach-stat__num">7</div>
+    <div class="teach-stat__label">Years</div>
+  </div>
+</div>
+
+<!-- LSU: Graduate Teaching Assistant -->
+<div class="teach-card">
+  <div class="teach-card__header" style="background:#4e79a7; color:#fff;">
+    <h2 style="color:#fff;">Graduate Teaching Assistant</h2>
+    <div class="teach-card__meta">Louisiana State University, Cain Dept. of Chemical Engineering &nbsp;&middot;&nbsp; Baton Rouge, LA &nbsp;&middot;&nbsp; 2019&ndash;2023</div>
+  </div>
+  <table class="teach-table">
+    <thead>
+      <tr>
+        <th>Course</th>
+        <th style="width:115px;">Role</th>
+        <th class="right" style="width:210px;">Semester(s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Numerical Methods and Programming</td>
+        <td><span class="role-badge role-ta">Teaching Asst</span></td>
+        <td class="when">Fall 2019</td>
+      </tr>
+      <tr>
+        <td>Unit Operations Design</td>
+        <td><span class="role-badge role-ta">Teaching Asst</span></td>
+        <td class="when">Spring 2020</td>
+      </tr>
+      <tr>
+        <td>Process Control and Dynamics</td>
+        <td><span class="role-badge role-ta">Teaching Asst</span></td>
+        <td class="when">Fall 2020, 2021, 2022</td>
+      </tr>
+      <tr>
+        <td>Advanced Process Control Systems</td>
+        <td><span class="role-badge role-ta">Teaching Asst</span></td>
+        <td class="when">Spring 2021, 2022, 2023</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- UCR: Assistant Professor -->
+<div class="teach-card">
+  <div class="teach-card__header" style="background:#76b7b2; color:#333;">
+    <h2 style="color:#333;">Assistant Professor</h2>
+    <div class="teach-card__meta" style="color:#444;">Universidad de Costa Rica, School of Chemical Engineering &nbsp;&middot;&nbsp; San Jos&eacute;, Costa Rica &nbsp;&middot;&nbsp; 2016&ndash;2019</div>
+  </div>
+  <table class="teach-table">
+    <thead>
+      <tr>
+        <th>Course</th>
+        <th style="width:115px;">Role</th>
+        <th class="right" style="width:210px;">Semester(s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Kinetics and Chemical Reactors</td>
+        <td><span class="role-badge role-lead">Lead Teacher</span></td>
+        <td class="when">Spring 2019</td>
+      </tr>
+      <tr>
+        <td>Kinetics and Chemical Reactors</td>
+        <td><span class="role-badge role-support">Supporting</span></td>
+        <td class="when">Fall 2016 &ndash; Spring 2018</td>
+      </tr>
+      <tr>
+        <td>Lab. of Measurements &amp; Experimental Data Analysis</td>
+        <td><span class="role-badge role-lead">Lead Teacher</span></td>
+        <td class="when">Spring 2017 &ndash; Fall 2018</td>
+      </tr>
+      <tr>
+        <td>Thermodynamics I</td>
+        <td><span class="role-badge role-lead">Lead Teacher</span></td>
+        <td class="when">Fall 2018</td>
+      </tr>
+      <tr>
+        <td>Thermodynamics I</td>
+        <td><span class="role-badge role-support">Supporting</span></td>
+        <td class="when">Fall 2016 &ndash; 2018</td>
+      </tr>
+      <tr>
+        <td>Laboratory of Separation Operations of Phases</td>
+        <td><span class="role-badge role-lead">Lead Teacher</span></td>
+        <td class="when">Fall 2017</td>
+      </tr>
+      <tr>
+        <td>Production Planning</td>
+        <td><span class="role-badge role-lead">Lead Teacher</span></td>
+        <td class="when">Summer 2017</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

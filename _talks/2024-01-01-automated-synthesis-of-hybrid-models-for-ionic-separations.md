@@ -6,5 +6,8 @@ permalink: /talks/2024-01-01-automated-synthesis-of-hybrid-models-for-ionic-sepa
 venue: "2024 AIChE Annual Meeting"
 date: 2024-01-01
 location: "Orlando, Florida, United States"
+topics:
+  - hybrid-modeling
+  - ionic-separations
 ---
 

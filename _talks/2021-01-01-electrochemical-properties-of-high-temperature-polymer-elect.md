@@ -6,4 +6,7 @@ permalink: /talks/2021-01-01-electrochemical-properties-of-high-temperature-poly
 venue: "ECS Meeting Abstracts"
 date: 2021-01-01
 location: ""
+topics:
+  - electrochemical-systems
+  - machine-learning
 ---

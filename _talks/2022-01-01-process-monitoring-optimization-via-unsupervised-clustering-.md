@@ -6,4 +6,7 @@ permalink: /talks/2022-01-01-process-monitoring-optimization-via-unsupervised-cl
 venue: "2022 AIChE Annual Meeting"
 date: 2022-01-01
 location: "Phoenix, Arizona, United States"
+topics:
+  - process-monitoring
+  - machine-learning
 ---

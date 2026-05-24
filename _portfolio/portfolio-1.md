@@ -1,7 +1,10 @@
 ---
 title: "HElioS — Hybrid Modeling for Electrochemical Systems"
-excerpt: "<br/><img src='/images/abstract.png'>"
+excerpt: "<img src='/images/abstract.png'>"
 collection: portfolio
+type: "Python Package"
+description: "Open-source Python library for building, training, and evaluating hybrid physics-informed models for electrochemical systems. Includes modular architectures, training utilities, and post-processing tools."
+github: "https://github.com/lbrice1/helios"
 ---
 HElioS
 ======

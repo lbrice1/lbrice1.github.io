@@ -6,4 +6,7 @@ permalink: /talks/2022-01-01-bridging-the-length-scales-in-ionic-separations-via
 venue: "APS March Meeting Abstracts"
 date: 2022-01-01
 location: ""
+topics:
+  - ionic-separations
+  - machine-learning
 ---

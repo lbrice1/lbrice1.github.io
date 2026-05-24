@@ -6,4 +6,7 @@ permalink: /talks/2021-01-01-inteligencia-artificial-y-simulacion-en-ingenieria-
 venue: "PROCESA 3rd AIChE Colombia Student Regional Conference"
 date: 2021-09-01
 location: "Colombia"
+topics:
+  - machine-learning
+  - ai-in-industry
 ---

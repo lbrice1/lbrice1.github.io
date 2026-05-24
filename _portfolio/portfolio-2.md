@@ -1,7 +1,9 @@
 ---
 title: "SimWiz (contributor)"
-excerpt: "<br/><img src='/images/swcomp.png'>"
+excerpt: "<img src='/images/swcomp.png'>"
 collection: portfolio
+type: "Software Platform"
+description: "Interactive Python platform with virtual chemical plants and a DCS environment for process simulation, data collection, and engineering education across the full ChE curriculum."
 ---
 SimWiz
 ======

@@ -7,5 +7,8 @@ date: '2023-03-01'
 venue: 'Computers \& Chemical Engineering'
 paperurl: 'https://doi.org/10.1016/j.compchemeng.2023.108159'
 citation: 'Briceno-Mena, L. A., Arges, C. G., & Romagnoli, J. A. (2023). Machine learning-based surrogate models and transfer learning for derivative free optimization of HT-PEM fuel cells. Computers & Chemical Engineering, 171, 108159.'
+topics:
+  - electrochemical-systems
+  - machine-learning
+  - hybrid-modeling
 ---
-
