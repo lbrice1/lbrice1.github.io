@@ -267,7 +267,7 @@
       color: $text-color;
 
       &:hover {
-        color: $masthead-link-color-hover;
+        color: $primary-color;
         background: mix(#fff, $primary-color, 75%);
       }
     }
