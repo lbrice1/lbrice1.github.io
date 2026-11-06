@@ -13,15 +13,15 @@ name                     : &name "Luis Briceno-Mena"
 description              : &description "Research scientist working on scientific artificial intelligence."
 url                      : https://lbrice1.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
-teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+repository               : "lbrice1/lbrice1.github.io"
+teaser                   :
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : false
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link             : true #change to true to add link to talkmap on talks page
+talkmap_link             : false
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  provider               : false
   disqus:
     shortname            :
   discourse:
@@ -73,7 +73,7 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
+  provider               : false
   google:
     tracking_id          :
 
@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Luis Briceno-Mena"
-  avatar           : "profile.jpg"
+  avatar           : "portrait.jpg"
   bio              : "Research scientist developing physics-informed AI for materials science and chemical processes."
   location         : "Princeton, NJ"
   employer         : 
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "www.linkedin.com/in/luisbricenomena"
+  linkedin         : "https://www.linkedin.com/in/luisbricenomena"
   orcid            : "https://orcid.org/0000-0003-3684-4232"
   pinterest        :
   soundcloud       :
@@ -123,6 +123,14 @@ include:
   - _pages
   - files
 exclude:
+  - ref.bib
+  - scripts
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - .vscode
+  - "*.ipynb"
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
