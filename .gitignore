@@ -1,9 +1,11 @@
 _site/
 .bundle/
-vendor/
+/vendor/
 Gemfile.lock
 
 .DS_Store
 .jekyll-cache/
 .sass-cache/
 __pycache__/
+CONTEXT.md
+CONTEXT-archive.md

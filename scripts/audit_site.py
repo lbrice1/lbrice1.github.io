@@ -7,6 +7,7 @@ Fails (exit 1) when a file falls outside the allowlist or a page contains a forb
 Run it on every build before pushing.
 """
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -51,6 +52,15 @@ def main(root: Path) -> int:
                 if s in text:
                     print(f"FORBIDDEN    {rel}: {s!r}")
                     bad += 1
+    # Static files are copied from the working tree, which may hold git-ignored files that
+    # GitHub Pages will never see. Every copied asset must be tracked.
+    tracked = set(subprocess.run(["git", "ls-files"], capture_output=True, text=True,
+                                 cwd=Path(__file__).resolve().parents[1]).stdout.split())
+    for f in sorted(p for p in root.rglob("*") if p.is_file()):
+        rel = f.relative_to(root).as_posix()
+        if rel.startswith(("assets/", "images/")) and rel not in tracked:
+            print(f"UNTRACKED    {rel}")
+            bad += 1
     print(f"{bad} problem(s)")
     return 1 if bad else 0
 
