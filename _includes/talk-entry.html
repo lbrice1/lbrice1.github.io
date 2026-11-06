@@ -1,0 +1,9 @@
+{%- assign talk_ = include.talk -%}
+<li class="entry" data-topics="{{ talk_.topics | join: ' ' }}">
+  <p class="entry__title"><a href="{{ talk_.url | relative_url }}">{{ talk_.title }}</a>{% if talk_.date > site.time %} <span class="badge" data-until="{{ talk_.date | date: '%Y-%m-%d' }}">Upcoming</span>{% endif %}</p>
+  <p class="entry__meta">{{ talk_.type }}{% if talk_.venue %}, {{ talk_.venue }}{% endif %}{% if talk_.location and talk_.location != '' %} · {{ talk_.location }}{% endif %}</p>
+  <div class="entry__actions">
+    {%- if talk_.talk_url %}<a class="button button--small" href="{{ talk_.talk_url }}">Slides</a>{% endif %}
+    {% include topic-tags.html topics=talk_.topics base='/talks/' %}
+  </div>
+</li>

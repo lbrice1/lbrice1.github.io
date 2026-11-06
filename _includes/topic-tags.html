@@ -1,0 +1,8 @@
+{%- if include.topics %}
+<ul class="tags">
+  {%- for key in include.topics %}
+  {%- assign topic_ = site.data.topics | where: 'key', key | first %}
+  {%- if topic_ %}<li><a class="tag" href="{{ include.base | default: '/publications/' | relative_url }}?topic={{ topic_.key }}" style="--tag:{{ topic_.color }}">{{ topic_.label }}</a></li>{% endif %}
+  {%- endfor %}
+</ul>
+{%- endif %}

@@ -1,0 +1,18 @@
+---
+layout: wide
+permalink: /research/
+title: "Research"
+lead: "My research develops models that combine engineering knowledge with data, and the software that makes them usable. Each theme links to its publications."
+---
+<div class="themes">
+  {%- for theme in site.data.themes %}
+  <section class="theme" id="{{ theme.key }}">
+    <div class="theme__art">{% include motifs/{{ theme.motif }}.svg %}</div>
+    <div class="theme__text">
+      <h2>{{ theme.title }}</h2>
+      <p>{{ theme.body }}</p>
+      <p><a class="more" href="{{ '/publications/' | relative_url }}?topic={{ theme.topic }}">Related publications {% include icons/arrow.svg %}</a>{% if theme.key == 'software' %} · <a class="more" href="{{ '/software/' | relative_url }}">Software {% include icons/arrow.svg %}</a>{% endif %}</p>
+    </div>
+  </section>
+  {%- endfor %}
+</div>

@@ -1,35 +1,23 @@
 ---
+layout: wide
 permalink: /book/
-title: "AI in ChemE Book"
-excerpt: "Textbook, supplementary notebooks, and lecture slides"
-author_profile: true
-header:
-  overlay_color: "#0f2d52"
-  overlay_filter: "0.65"
+title: "AI in Chemical Engineering"
+lead: "Textbook, example notebooks, and lecture slides."
+description: "AI in Chemical Engineering: Unlocking the Power Within Data (CRC Press, 2025), with example notebooks and lecture slides."
 ---
-
-<div style="display:flex; gap:2em; align-items:flex-start; flex-wrap:wrap; margin-bottom:2em;">
-  <img src="/images/9781003455905.jpg" alt="Book cover: AI in Chemical Engineering" style="max-width:200px; border-radius:6px; box-shadow:0 4px 16px rgba(0,0,0,0.18);">
-  <div>
-    <h2 style="margin-top:0; border-left:none; padding-left:0;">AI in Chemical Engineering:<br>Unlocking the Power Within Data</h2>
-    <p><strong>José A. Romagnoli, Luis Briceño-Mena, Vidhyadhar Manee</strong><br>
-    CRC Press / Taylor &amp; Francis, 2024 &nbsp;·&nbsp; 1st Edition<br>
-    ISBN: 978-1-003-45590-5</p>
-    <p>
-      <a href="https://doi.org/10.1201/9781003455905" class="btn btn--info" target="_blank" rel="noopener">Buy / View on Publisher Site</a>
-      &nbsp;
-      <a href="https://github.com/lbrice1/ai_cheme_examples" class="btn btn--info" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub Repository</a>
-    </p>
+<div class="book">
+  <img class="book__cover" src="{{ '/images/9781003455905.jpg' | relative_url }}" width="200" alt="Cover of AI in Chemical Engineering: Unlocking the Power Within Data">
+  <div class="book__text">
+    <h2>AI in Chemical Engineering: Unlocking the Power Within Data</h2>
+    <p>José A. Romagnoli, Luis A. Briceno-Mena, and Vidhyadhar Manee<br>CRC Press, 2025 · First edition · ISBN 978-1-003-45590-5</p>
+    <p>A textbook for advanced chemical engineering students and industry practitioners. It introduces machine learning and its application in the chemical and process industries: unsupervised, supervised, and reinforcement learning, with Python examples and case studies from oil and gas to electrochemistry.</p>
+    <p><a class="button" href="https://doi.org/10.1201/9781003455905">Publisher page</a> <a class="button button--quiet" href="https://github.com/lbrice1/ai_cheme_examples">{% include icons/github.svg %} Examples repository</a></p>
   </div>
 </div>
 
-Industry 4.0 is revolutionizing chemical manufacturing. Today's chemical companies are swiftly embracing the digital era, recognizing the significant benefits of interconnected products, production equipment, and personnel. As technology advances and production volumes grow, there is an increasing need for new computational tools and innovative solutions to address everyday challenges.
+<div class="prose prose--wide" markdown="1">
 
-*AI in Chemical Engineering: Unlocking the Power Within Data* introduces readers to the essential concepts of machine learning and their application in the chemical and process industries, aiming to enhance efficiency, adaptability, and profitability. This work delves into the transformation of traditional plant operations into integrated and intelligent systems, providing readers with a foundation for developing and understanding the tools necessary for data collection and analysis.
-
-This practical text is designed for advanced chemical engineering students and industry practitioners. It introduces concepts and theories in a logical and sequential manner, serving as an essential resource for understanding both current and emerging developments in this important and evolving field.
-
-## Getting Started with the Examples
+## Example notebooks
 
 To use the example notebooks, clone or download the [GitHub repository](https://github.com/lbrice1/ai_cheme_examples) and install the dependencies:
 
@@ -39,7 +27,7 @@ cd ai_cheme_examples
 pip install -r requirements.txt
 ```
 
-## Chapter Materials
+## Chapter materials
 
 Slides and Jupyter notebooks are available for the chapters listed below. Chapters without supplementary materials are included for completeness.
 
@@ -64,13 +52,15 @@ Slides and Jupyter notebooks are available for the chapters listed below. Chapte
 If you use the materials in this repository in your research or teaching, please cite:
 
 ```bibtex
-@book{romagnoli2024ai,
+@book{romagnoli2025ai,
   title     = {AI in Chemical Engineering: Unlocking the Power Within Data},
   author    = {Romagnoli, J.A. and Brice{\~n}o-Mena, L. and Manee, V.},
-  year      = {2024},
+  year      = {2025},
   edition   = {1st},
   publisher = {CRC Press},
   doi       = {10.1201/9781003455905},
   url       = {https://doi.org/10.1201/9781003455905}
 }
 ```
+
+</div>

@@ -1,31 +1,49 @@
-A Github Pages template for academic websites. This was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License. See LICENSE.md.
+# lbrice1.github.io
 
-I think I've got things running smoothly and fixed some major bugs, but feel free to file issues or make pull requests if you want to improve the generic template / theme.
+Source of the personal website of Luis A. Briceno-Mena, published at <https://lbrice1.github.io> by GitHub Pages (legacy build from `master`, `github-pages` gem).
 
-### Note: if you are using this repo and now get a notification about a security vulnerability, delete the Gemfile.lock file. 
+The site uses its own Jekyll layouts and a single stylesheet; there is no gem theme. Fonts (Inter, Source Serif 4) and d3 are self-hosted, so pages make no third-party requests.
 
-# Instructions
+## Layout of the repository
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+| Path | Content |
+|---|---|
+| `_config.yml` | site settings, author profile links, collections, plugins |
+| `_data/navigation.yml` | top navigation |
+| `_data/themes.yml` | research themes: card text on the home page, sections on `/research/` |
+| `_data/topics.yml` | topic keys, labels, and colors for tags, filters, and the graph view |
+| `_pages/` | home, about, research, publications, software, teaching, talks, book, contact, news, privacy |
+| `_publications/`, `_talks/`, `_teaching/` | one Markdown file per item |
+| `_posts/` | news items (`date_format` sets how the date is shown; `link` points to the item) |
+| `_layouts/`, `_includes/` | templates; SVG artwork in `_includes/banner.svg` and `_includes/motifs/` |
+| `assets/css/site.css` | all styles, with light and dark tokens |
+| `assets/js/` | theme toggle and menu (`site.js`), listing filter (`listing.js`), graph view (`pub-graph.js`) |
+| `ref.bib`, `scripts/` | publication sources and maintenance scripts; excluded from the build |
 
-See more info at https://academicpages.github.io/
+## Adding a publication
 
-## To run locally (not on GitHub Pages, to serve on your own computer)
+1. Add the entry to `ref.bib`.
+2. Run `python3 scripts/generate_publications.py`. It writes a file in `_publications/` for each entry that has none and skips existing files.
+3. Edit the new file: keep journal articles, books, and chapters only (talks belong in `_talks/`), write `citation` in APA form, and add `topics` from `_data/topics.yml`.
 
-1. Clone the repository and made updates as detailed above
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle clean` to clean up the directory (no need to run `--force`)
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `bundle exec jekyll liveserve` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+Only published work goes into `ref.bib` or the site. The repository is public, including its history.
 
-# Changelog -- bugfixes and enhancements
+## Local preview
 
-There is one logistical issue with a ready-to-fork template theme like academic pages that makes it a little tricky to get bug fixes and updates to the core theme. If you fork this repository, customize it, then pull again, you'll probably get merge conflicts. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch. 
+The GitHub Pages gem set needs a newer Ruby than macOS ships, so the preview runs in Docker:
 
-To support this, all changes to the underlying code appear as a closed issue with the tag 'code change' -- get the list [here](https://github.com/academicpages/academicpages.github.io/issues?q=is%3Aclosed%20is%3Aissue%20label%3A%22code%20change%22%20). Each issue thread includes a comment linking to the single commit or a diff across multiple commits, so those with forked repositories can easily identify what they need to patch.
+```bash
+docker run --rm -p 4000:4000 -v "$PWD":/srv -w /srv ruby:3.3 \
+  bash -c 'bundle install && bundle exec jekyll serve --host 0.0.0.0'
+```
+
+Then open <http://localhost:4000>.
+
+## Checks before pushing
+
+```bash
+bundle exec jekyll build             # or the Docker command above with `jekyll build`
+python3 scripts/audit_site.py _site  # every file on the allowlist; no forbidden strings
+```
+
+`scripts/audit_site.py` fails when the build contains a file outside its allowlist or a forbidden string, such as unpublished titles or a plain email address. Extend the allowlist when a new kind of page is added.

@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="container page">
+  <p class="eyebrow"><a href="{{ '/publications/' | relative_url }}">Publications</a></p>
+  <header class="page-head">
+    <h1>{{ page.title }}</h1>
+    <p class="lead"><em>{{ page.venue }}</em>, {{ page.date | date: '%Y' }}</p>
+  </header>
+  <div class="prose">
+    {%- if page.citation %}
+    <h2>Citation</h2>
+    <p class="citation">{{ page.citation }}</p>
+    {%- endif %}
+    <div class="entry__actions">
+      {%- if page.paperurl and page.paperurl != '' %}<a class="button" href="{{ page.paperurl }}">Read the paper (DOI)</a>{% endif %}
+      {% include topic-tags.html topics=page.topics %}
+    </div>
+    {{ content }}
+  </div>
+</article>

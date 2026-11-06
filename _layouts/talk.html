@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="container page">
+  <p class="eyebrow"><a href="{{ '/talks/' | relative_url }}">Talks</a></p>
+  <header class="page-head">
+    <h1>{{ page.title }}</h1>
+    <p class="lead">{{ page.type }}{% if page.venue %}, {{ page.venue }}{% endif %}</p>
+  </header>
+  <div class="prose">
+    <dl class="facts">
+      <dt>Date</dt><dd>{{ page.date | date: '%B %Y' }}{% if page.date > site.time %} <span class="badge" data-until="{{ page.date | date: '%Y-%m-%d' }}">Upcoming</span>{% endif %}</dd>
+      {%- if page.location %}<dt>Location</dt><dd>{{ page.location }}</dd>{% endif %}
+    </dl>
+    <div class="entry__actions">
+      {%- if page.talk_url %}<a class="button" href="{{ page.talk_url }}">Slides</a>{% endif %}
+      {% include topic-tags.html topics=page.topics base='/talks/' %}
+    </div>
+    {{ content }}
+  </div>
+</article>

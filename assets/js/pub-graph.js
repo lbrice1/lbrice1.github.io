@@ -1,261 +1,108 @@
-/* pub-graph.js — D3 v7 force-directed publications graph */
+/* pub-graph.js: force-directed graph of publications or talks linked to topics (d3 v7).
+ * Colors come from the topic data (_data/topics.yml); strokes and text use CSS classes,
+ * so the graph follows the light and dark themes. */
 (function () {
+  "use strict";
 
-  var TOPIC_LABELS = {
-    "machine-learning":        "Machine Learning",
-    "hybrid-modeling":         "Hybrid & Physics-Informed Modeling",
-    "electrochemical-systems": "Electrochemical Systems",
-    "ionic-separations":       "Ionic Separations",
-    "process-monitoring":      "Process Monitoring",
-    "formulated-products":     "Formulated Products",
-    "ai-in-industry":          "AI in Industry",
-    "environmental-engineering":"Environmental Engineering",
-    "bioanalytical":           "Bioanalytical Methods"
-  };
-
-  // Ordered so the legend and color mapping is deterministic
-  var TOPIC_ORDER = Object.keys(TOPIC_LABELS);
-
-  var COLOR = d3.scaleOrdinal()
-    .domain(TOPIC_ORDER)
-    .range(d3.schemeTableau10);
-
-  window.initPubGraph = function (containerSel, pubsData) {
-    var container = document.querySelector(containerSel);
-    if (!container) return;
+  window.initPubGraph = function (container, data) {
+    if (!container || !window.d3) return;
+    var topicInfo = {};
+    data.topics.forEach(function (t) { topicInfo[t.key] = t; });
+    var color = function (key) { return (topicInfo[key] && topicInfo[key].color) || "#8a8f98"; };
 
     var W = container.clientWidth || 900;
-    var H = Math.max(560, Math.round(W * 0.65));
+    var H = Math.max(480, Math.min(720, Math.round(W * 0.62)));
 
-    // ── Build nodes & links ────────────────────────────────────────────────
-    var topicSet = new Set();
-    pubsData.forEach(function (p) {
-      (p.topics || []).forEach(function (t) { topicSet.add(t); });
+    // Nodes and links
+    var used = new Set();
+    data.items.forEach(function (p) { (p.topics || []).forEach(function (t) { used.add(t); }); });
+    var topicNodes = Array.from(used).map(function (key) {
+      return { id: "t_" + key, kind: "topic", key: key, label: (topicInfo[key] && topicInfo[key].label) || key };
     });
-
-    var nodes = [];
-    var topicNodes = {};
-
-    // Topic nodes first so they render behind pubs
-    topicSet.forEach(function (tid) {
-      var node = { id: "t_" + tid, kind: "topic", tid: tid,
-                   label: TOPIC_LABELS[tid] || tid };
-      nodes.push(node);
-      topicNodes[tid] = node;
+    var itemNodes = data.items.map(function (p, i) {
+      return { id: "p_" + i, kind: "item", data: p, primary: (p.topics && p.topics[0]) || null };
     });
-
-    // Publication nodes
-    var pubNodes = pubsData.map(function (p, i) {
-      var primaryTopic = (p.topics && p.topics[0]) || null;
-      return { id: "p_" + i, kind: "pub", data: p, primaryTopic: primaryTopic };
-    });
-    nodes = nodes.concat(pubNodes);
-
-    // Links
     var links = [];
-    pubNodes.forEach(function (pn) {
-      (pn.data.topics || []).forEach(function (tid) {
-        if (topicNodes[tid]) {
-          links.push({ source: pn.id, target: "t_" + tid });
-        }
-      });
+    itemNodes.forEach(function (n) {
+      (n.data.topics || []).forEach(function (key) { links.push({ source: n.id, target: "t_" + key, key: key }); });
     });
+    var nodes = topicNodes.concat(itemNodes);
 
-    // ── SVG setup ─────────────────────────────────────────────────────────
-    d3.select(containerSel).select("svg").remove();
-
-    var svg = d3.select(containerSel).append("svg")
+    d3.select(container).selectAll("*").remove();
+    var svg = d3.select(container).append("svg")
+      .attr("class", "graph__svg")
+      .attr("viewBox", [0, 0, W, H])
       .attr("width", "100%")
       .attr("height", H)
-      .style("font-family", "inherit");
-
+      .attr("role", "img")
+      .attr("aria-label", "Graph of " + data.items.length + " items linked to " + topicNodes.length + " topics");
     var g = svg.append("g");
-
-    svg.call(d3.zoom()
-      .scaleExtent([0.3, 4])
-      .on("zoom", function (event) { g.attr("transform", event.transform); }));
-
-    // ── Force simulation ───────────────────────────────────────────────────
-    var nodeMap = {};
-    nodes.forEach(function (n) { nodeMap[n.id] = n; });
+    svg.call(d3.zoom().scaleExtent([0.4, 4]).on("zoom", function (event) { g.attr("transform", event.transform); }));
 
     var sim = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links)
-        .id(function (d) { return d.id; })
-        .distance(function (d) {
-          return d.source.kind === "topic" || d.target.kind === "topic" ? 100 : 60;
-        })
-        .strength(0.6))
-      .force("charge", d3.forceManyBody().strength(function (d) {
-        return d.kind === "topic" ? -900 : -120;
-      }))
+      .force("link", d3.forceLink(links).id(function (d) { return d.id; }).distance(90).strength(0.55))
+      .force("charge", d3.forceManyBody().strength(function (d) { return d.kind === "topic" ? -800 : -110; }))
       .force("center", d3.forceCenter(W / 2, H / 2))
-      .force("collide", d3.forceCollide().radius(function (d) {
-        return d.kind === "topic" ? 50 : 12;
-      }))
-      .alphaDecay(0.025);
+      // Pull disconnected topics (one or two items) back toward the middle.
+      .force("x", d3.forceX(W / 2).strength(0.07))
+      .force("y", d3.forceY(H / 2).strength(0.09))
+      .force("collide", d3.forceCollide().radius(function (d) { return d.kind === "topic" ? 46 : 11; }))
+      .alphaDecay(0.03);
 
-    // ── Links ──────────────────────────────────────────────────────────────
-    var linkSel = g.append("g").attr("class", "links")
-      .selectAll("line")
-      .data(links)
-      .join("line")
-      .attr("stroke", function (d) {
-        var tid = (d.target.tid || (d.target.id && d.target.id.replace("t_", "")));
-        return COLOR(tid);
-      })
-      .attr("stroke-opacity", 0.35)
-      .attr("stroke-width", 1.2);
+    var linkSel = g.append("g").attr("class", "graph__links").selectAll("line").data(links).join("line")
+      .attr("stroke", function (d) { return color(d.key); });
 
-    // ── Topic nodes ────────────────────────────────────────────────────────
-    var topicSel = g.append("g").attr("class", "topic-nodes")
-      .selectAll("g")
-      .data(nodes.filter(function (d) { return d.kind === "topic"; }))
-      .join("g")
-      .attr("class", "topic-node")
-      .style("cursor", "default");
+    var topicSel = g.append("g").selectAll("g").data(topicNodes).join("g").attr("class", "graph__topic");
+    topicSel.append("circle").attr("r", 18).attr("fill", function (d) { return color(d.key); });
+    topicSel.append("text").attr("class", "graph__label").attr("text-anchor", "middle").attr("dy", "2.6em")
+      .text(function (d) { return d.label; });
 
-    topicSel.append("circle")
-      .attr("r", 22)
-      .attr("fill", function (d) { return COLOR(d.tid); })
-      .attr("stroke", "#fff")
-      .attr("stroke-width", 2)
-      .attr("fill-opacity", 0.9);
+    var itemSel = g.append("g").selectAll("circle").data(itemNodes).join("circle")
+      .attr("class", "graph__item")
+      .attr("r", 7)
+      .attr("tabindex", 0)
+      .attr("role", "link")
+      .attr("aria-label", function (d) { return d.data.title + ", " + d.data.year; })
+      .attr("fill", function (d) { return color(d.primary); });
 
-    topicSel.append("text")
-      .text(function (d) { return d.label; })
-      .attr("text-anchor", "middle")
-      .attr("dy", "2.8em")
-      .attr("font-size", "11px")
-      .attr("font-weight", "600")
-      .attr("fill", "#333")
-      .style("pointer-events", "none");
-
-    // ── Publication nodes ──────────────────────────────────────────────────
-    var pubSel = g.append("g").attr("class", "pub-nodes")
-      .selectAll("circle")
-      .data(pubNodes)
-      .join("circle")
-      .attr("r", 8)
-      .attr("fill", function (d) {
-        return d.primaryTopic ? COLOR(d.primaryTopic) : "#aaa";
-      })
-      .attr("stroke", "#fff")
-      .attr("stroke-width", 1.5)
-      .attr("fill-opacity", 0.85)
-      .style("cursor", "pointer");
-
-    // ── Tooltip ────────────────────────────────────────────────────────────
-    var tooltip = d3.select("body").append("div")
-      .attr("id", "pub-graph-tooltip")
-      .style("position", "absolute")
-      .style("background", "rgba(255,255,255,0.97)")
-      .style("border", "1px solid #ccc")
-      .style("border-radius", "6px")
-      .style("padding", "8px 12px")
-      .style("font-size", "12px")
-      .style("line-height", "1.5")
-      .style("max-width", "280px")
-      .style("box-shadow", "0 2px 8px rgba(0,0,0,0.15)")
-      .style("pointer-events", "none")
-      .style("display", "none")
-      .style("z-index", "9999");
-
-    pubSel
-      .on("mouseover", function (event, d) {
-        d3.select(this).attr("r", 11).attr("stroke-width", 2.5);
-        var year = d.data.year || "";
-        var venue = d.data.venue || "";
-        tooltip
-          .style("display", "block")
-          .html("<strong>" + d.data.title + "</strong><br/>"
-              + (year ? year + " &middot; " : "")
-              + "<em>" + venue + "</em>");
-      })
-      .on("mousemove", function (event) {
-        tooltip
-          .style("left", (event.pageX + 14) + "px")
-          .style("top",  (event.pageY - 28) + "px");
-      })
-      .on("mouseout", function () {
-        d3.select(this).attr("r", 8).attr("stroke-width", 1.5);
-        tooltip.style("display", "none");
-      })
-      .on("click", function (event, d) {
-        if (d.data.url) window.location.href = d.data.url;
-      });
-
-    // ── Drag ──────────────────────────────────────────────────────────────
-    function dragged(event, d) {
-      d.fx = event.x; d.fy = event.y;
+    // Tooltip, positioned inside the container
+    var tip = d3.select(container).append("div").attr("class", "graph__tip").attr("hidden", true);
+    function show(event, d) {
+      tip.selectAll("*").remove();
+      tip.append("strong").text(d.data.title);
+      tip.append("span").text((d.data.year ? d.data.year + " · " : "") + (d.data.venue || ""));
+      var box = container.getBoundingClientRect();
+      var x = event.clientX !== undefined && event.clientX ? event.clientX - box.left : d.x;
+      var y = event.clientY !== undefined && event.clientY ? event.clientY - box.top : d.y;
+      tip.style("left", Math.min(x + 14, W - 280) + "px").style("top", Math.max(y - 12, 0) + "px").attr("hidden", null);
     }
-    function dragStarted(event, d) {
-      if (!event.active) sim.alphaTarget(0.3).restart();
-      d.fx = d.x; d.fy = d.y;
+    function hide() { tip.attr("hidden", true); }
+    function open(d) { if (d.data.url) window.location.href = d.data.url; }
+    itemSel
+      .on("mouseenter", show).on("mousemove", show).on("mouseleave", hide)
+      .on("focus", show).on("blur", hide)
+      .on("click", function (event, d) { open(d); })
+      .on("keydown", function (event, d) { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); open(d); } });
+
+    function drag() {
+      return d3.drag()
+        .on("start", function (event, d) { if (!event.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+        .on("drag", function (event, d) { d.fx = event.x; d.fy = event.y; })
+        .on("end", function (event, d) { if (!event.active) sim.alphaTarget(0); d.fx = null; d.fy = null; });
     }
-    function dragEnded(event, d) {
-      if (!event.active) sim.alphaTarget(0);
-      d.fx = null; d.fy = null;
-    }
+    itemSel.call(drag());
+    topicSel.call(drag());
 
-    pubSel.call(d3.drag()
-      .on("start", dragStarted)
-      .on("drag",  dragged)
-      .on("end",   dragEnded));
-
-    topicSel.call(d3.drag()
-      .on("start", dragStarted)
-      .on("drag",  dragged)
-      .on("end",   dragEnded));
-
-    // ── Tick ──────────────────────────────────────────────────────────────
+    var pad = 40;
     sim.on("tick", function () {
-      linkSel
-        .attr("x1", function (d) { return d.source.x; })
-        .attr("y1", function (d) { return d.source.y; })
-        .attr("x2", function (d) { return d.target.x; })
-        .attr("y2", function (d) { return d.target.y; });
-
-      topicSel.attr("transform", function (d) {
-        return "translate(" + d.x + "," + d.y + ")";
+      nodes.forEach(function (d) {
+        d.x = Math.max(pad, Math.min(W - pad, d.x));
+        d.y = Math.max(pad, Math.min(H - pad, d.y));
       });
-
-      pubSel
-        .attr("cx", function (d) { return d.x; })
-        .attr("cy", function (d) { return d.y; });
+      linkSel.attr("x1", function (d) { return d.source.x; }).attr("y1", function (d) { return d.source.y; })
+        .attr("x2", function (d) { return d.target.x; }).attr("y2", function (d) { return d.target.y; });
+      topicSel.attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
+      itemSel.attr("cx", function (d) { return d.x; }).attr("cy", function (d) { return d.y; });
     });
-
-    // ── Legend ─────────────────────────────────────────────────────────────
-    var presentTopics = Array.from(topicSet);
-    var lgd = svg.append("g")
-      .attr("class", "pub-legend")
-      .attr("transform", "translate(14, 14)");
-
-    lgd.append("rect")
-      .attr("x", -6).attr("y", -6)
-      .attr("width", 210).attr("height", presentTopics.length * 20 + 10)
-      .attr("rx", 6)
-      .attr("fill", "rgba(255,255,255,0.88)")
-      .attr("stroke", "#ddd");
-
-    presentTopics.forEach(function (tid, i) {
-      var row = lgd.append("g").attr("transform", "translate(0," + (i * 20) + ")");
-      row.append("circle").attr("r", 7).attr("cx", 7).attr("cy", 7)
-        .attr("fill", COLOR(tid));
-      row.append("text")
-        .attr("x", 20).attr("y", 11.5)
-        .attr("font-size", "11px")
-        .attr("fill", "#444")
-        .text(TOPIC_LABELS[tid] || tid);
-    });
-
-    // ── Hint text ─────────────────────────────────────────────────────────
-    svg.append("text")
-      .attr("x", W - 10).attr("y", H - 8)
-      .attr("text-anchor", "end")
-      .attr("font-size", "10px")
-      .attr("fill", "#999")
-      .text("Scroll to zoom · Drag to pan or move nodes · Click a node to open publication");
   };
-
 })();

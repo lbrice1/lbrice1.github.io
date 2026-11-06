@@ -1,0 +1,14 @@
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div>
+      <p class="site-footer__name">{{ site.author.name }}</p>
+      <p>{{ site.author.affiliation }}, {{ site.author.institution }}<br>{{ site.author.location }}</p>
+      <p>{% include icons/email.svg %} {% include email.html %}</p>
+    </div>
+    <div class="site-footer__meta">
+      {% include profile-links.html %}
+      <p><a href="{{ '/news/' | relative_url }}">News</a> · <a href="{{ '/feed.xml' | relative_url }}">Feed</a> · <a href="{{ '/terms/' | relative_url }}">Privacy</a></p>
+      <p>© {{ site.time | date: '%Y' }} {{ site.author.name }}</p>
+    </div>
+  </div>
+</footer>

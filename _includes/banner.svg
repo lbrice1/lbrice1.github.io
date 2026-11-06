@@ -1,0 +1,48 @@
+<svg class="banner__art" viewBox="0 40 1200 236" preserveAspectRatio="xMaxYMid slice" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="banner-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.1" class="art-grid"/>
+    </pattern>
+    <marker id="banner-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" class="art-arrowhead"/>
+    </marker>
+  </defs>
+  <rect y="40" width="1200" height="236" fill="url(#banner-grid)"/>
+  <!-- process flowsheet: feed, reactor, column, products -->
+  <g class="art-line">
+    <path d="M520 150h56" marker-end="url(#banner-arrow)"/>
+    <path d="M652 150h58" marker-end="url(#banner-arrow)"/>
+    <path d="M770 96h70" marker-end="url(#banner-arrow)"/>
+    <path d="M770 204h70" marker-end="url(#banner-arrow)"/>
+    <path d="M614 108V60h268v40" />
+    <path d="M882 128v26h48" marker-end="url(#banner-arrow)"/>
+  </g>
+  <g class="art-unit">
+    <rect x="580" y="108" width="72" height="84" rx="30"/>
+    <rect x="712" y="66" width="56" height="168" rx="14"/>
+    <path d="M712 106h56M712 136h56M712 166h56M712 196h56" class="art-tray"/>
+    <rect x="844" y="76" width="76" height="40" rx="8"/>
+    <rect x="844" y="184" width="76" height="40" rx="8"/>
+    <circle cx="960" cy="154" r="26"/>
+  </g>
+  <!-- data and model layer: sensors feed a network that returns to the plant -->
+  <g class="art-line art-line--soft">
+    <path d="M616 192v52M740 234v22M882 224v32M960 180v76"/>
+    <path d="M600 256h400"/>
+    <path d="M1000 256c60 0 70-50 70-100s-10-90-60-90H930" stroke-dasharray="5 6" marker-end="url(#banner-arrow)"/>
+  </g>
+  <g class="art-node">
+    <circle cx="616" cy="256" r="6"/><circle cx="740" cy="256" r="6"/><circle cx="882" cy="256" r="6"/><circle cx="960" cy="256" r="6"/>
+  </g>
+  <g class="art-line art-line--soft">
+    <path d="M1060 110 1110 80M1060 110 1110 140M1060 110 1110 200M1060 200 1110 80M1060 200 1110 140M1060 200 1110 200M1110 80 1160 140M1110 140 1160 140M1110 200 1160 140"/>
+  </g>
+  <g class="art-node art-node--accent">
+    <circle cx="1060" cy="110" r="7"/><circle cx="1060" cy="200" r="7"/>
+    <circle cx="1110" cy="80" r="7"/><circle cx="1110" cy="140" r="7"/><circle cx="1110" cy="200" r="7"/>
+    <circle cx="1160" cy="140" r="8"/>
+  </g>
+  <g class="art-line art-line--accent">
+    <path d="M440 150h80" marker-end="url(#banner-arrow)"/>
+  </g>
+</svg>

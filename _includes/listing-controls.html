@@ -1,0 +1,14 @@
+{%- comment -%} Topic filter and list/graph switch for a listing page. Only topics present in the items are offered. {%- endcomment -%}
+{%- assign used = include.items | map: 'topics' | join: ',' | split: ',' | uniq -%}
+<div class="listing-controls">
+  <div class="filter" role="group" aria-label="Filter by topic">
+    <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+    {%- for t in site.data.topics %}{% if used contains t.key %}
+    <button type="button" class="chip" data-filter="{{ t.key }}" aria-pressed="false" style="--tag:{{ t.color }}">{{ t.label }}</button>
+    {%- endif %}{% endfor %}
+  </div>
+  <div class="view-switch" role="group" aria-label="View">
+    <button type="button" class="chip" data-view="list" aria-pressed="true">List</button>
+    <button type="button" class="chip" data-view="graph" aria-pressed="false">Graph</button>
+  </div>
+</div>

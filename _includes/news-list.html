@@ -1,0 +1,12 @@
+<ul class="news">
+  {%- for post in include.posts %}
+  {%- assign fmt = post.date_format | default: '%B %Y' %}
+  <li class="news__item">
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: fmt }}</time>
+    <div>
+      <p class="news__title">{% if post.link %}<a href="{{ post.link | relative_url }}">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</p>
+      {%- unless include.compact %}<div class="news__body">{{ post.content }}</div>{% endunless %}
+    </div>
+  </li>
+  {%- endfor %}
+</ul>

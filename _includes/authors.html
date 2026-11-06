@@ -1,0 +1,4 @@
+{%- comment -%} Authors from an APA citation ("A, B, & C (2023). Title ..."), with Luis's name in bold. {%- endcomment -%}
+{%- assign authors = include.citation | split: ' (' | first -%}
+{%- assign authors = authors | replace: 'Briceno-Mena, L. A.', '<strong>Briceno-Mena, L. A.</strong>' | replace: 'Briceno-Mena, L.,', '<strong>Briceno-Mena, L.</strong>,' | replace: 'Briceno-Mena, L.A.', '<strong>Briceno-Mena, L. A.</strong>' | replace: 'Briceño Mena, L.', '<strong>Briceño Mena, L.</strong>' -%}
+{{ authors }}

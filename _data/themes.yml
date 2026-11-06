@@ -1,0 +1,45 @@
+# Research themes, shown as cards on the home page (`summary`) and as sections on /research/ (`body`).
+# `motif` names an SVG in _includes/motifs/. `topic` filters the publications list.
+
+- key: hybrid
+  title: "Hybrid models with physical and qualitative constraints"
+  motif: hybrid
+  topic: hybrid-modeling
+  summary: "Models that place engineering knowledge, from balances to qualitative trends, into machine learning."
+  body: >-
+    Hybrid models combine first-principles relations with learned components.
+    My work places engineering knowledge into the training of such models: bounds on the output, the direction in which it changes with an input, and simplified balances.
+    The aim is a model whose behavior outside its data stays close to its behavior within them.
+    Examples include surrogate models and transfer learning for the optimization of high-temperature polymer electrolyte membrane (HT-PEM) fuel cells, hybrid models for ionic separations, and the incorporation of qualitative knowledge in hybrid modeling.
+
+- key: testing
+  title: "Testing data-driven methods for chemical plants"
+  motif: plant
+  topic: process-monitoring
+  summary: "Frameworks that test learned models and controllers on simulated plants before they reach a real one."
+  body: >-
+    Learned models and controllers need evidence before they operate a plant.
+    I develop frameworks for testing data-driven and statistical methods on simulated chemical plants with a verified ground truth.
+    The tests run over long horizons and grids of initial states. They report safety and convergence separately.
+    This line builds on earlier work on process monitoring, data mining, and dimensionality reduction for industrial data.
+
+- key: software
+  title: "Scientific machine learning software"
+  motif: cluster
+  topic: machine-learning
+  summary: "Research software and scalable training workflows, built with research groups across disciplines."
+  body: >-
+    In Data and Intelligent Systems at Princeton University, I build machine learning methods and research software with research groups across disciplines.
+    Much of this work concerns training and evaluation workflows that run at scale on GPU clusters, with reproducible environments and batch pipelines.
+    It also concerns scientific software that is reusable, tested, and documented, so that a group can keep building on it.
+    HElioS, an open-source Python framework for modeling and optimizing electrochemical systems, is an earlier example.
+
+- key: electrochemical
+  title: "Electrochemical systems and separations"
+  motif: cell
+  topic: electrochemical-systems
+  summary: "Machine learning for fuel cells, hydrogen pumps, and ion-exchange membranes."
+  body: >-
+    My doctoral work at Louisiana State University applied machine learning to electrochemical devices and separations.
+    It includes models that guide HT-PEM fuel cells toward greater power density and transfer learning across membrane electrochemical systems.
+    Related work combined molecular dynamics with machine learning to estimate ion activity coefficients in ion-exchange membranes.

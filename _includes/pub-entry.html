@@ -1,0 +1,12 @@
+{%- assign pub_ = include.pub -%}
+<li class="entry" data-topics="{{ pub_.topics | join: ' ' }}">
+  <p class="entry__title"><a href="{{ pub_.url | relative_url }}">{{ pub_.title }}</a></p>
+  {%- if pub_.citation %}<p class="entry__authors">{% include authors.html citation=pub_.citation %}</p>{% endif %}
+  <p class="entry__meta"><em>{{ pub_.venue }}</em>, {{ pub_.date | date: '%Y' }}</p>
+  <div class="entry__actions">
+    {%- if pub_.paperurl and pub_.paperurl != '' %}<a class="button button--small" href="{{ pub_.paperurl }}">DOI</a>{% endif %}
+    {%- if pub_.pdf %}<a class="button button--small" href="{{ pub_.pdf }}">PDF</a>{% endif %}
+    {%- if pub_.code %}<a class="button button--small" href="{{ pub_.code }}">Code</a>{% endif %}
+    {%- unless include.compact %}{% include topic-tags.html topics=pub_.topics %}{% endunless %}
+  </div>
+</li>

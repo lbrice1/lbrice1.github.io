@@ -1,0 +1,29 @@
+# Topic keys used in the `topics` front matter of publications and talks.
+# `color` is the categorical hue shown as a dot on tags and as a node in the graph view.
+- key: machine-learning
+  label: "Machine learning"
+  color: "#3a7cc0"
+- key: hybrid-modeling
+  label: "Hybrid modeling"
+  color: "#d17a00"
+- key: process-monitoring
+  label: "Process monitoring"
+  color: "#3f9a4a"
+- key: electrochemical-systems
+  label: "Electrochemical systems"
+  color: "#d4475f"
+- key: ionic-separations
+  label: "Ionic separations"
+  color: "#12a092"
+- key: formulated-products
+  label: "Formulated products"
+  color: "#b3901a"
+- key: ai-in-industry
+  label: "AI in industry"
+  color: "#9160c4"
+- key: environmental-engineering
+  label: "Environmental engineering"
+  color: "#d96a95"
+- key: bioanalytical
+  label: "Bioanalytical methods"
+  color: "#8f6d5a"

@@ -1,0 +1,66 @@
+---
+layout: default
+---
+<section class="banner">
+  {% include banner.svg %}
+  <div class="container banner__text">
+    <h1 class="banner__name">{{ site.author.name }}</h1>
+    <p class="banner__tagline">{{ site.tagline }}</p>
+  </div>
+</section>
+
+<section class="container intro">
+  <img class="intro__portrait" src="{{ site.author.portrait | relative_url }}" width="800" height="800" alt="Portrait of {{ site.author.name }}">
+  <div class="intro__text">
+    {{ content }}
+    <p class="intro__affiliation">{{ site.author.affiliation }}, {{ site.author.institution }}</p>
+    {% include profile-links.html %}
+    <p><a class="more" href="{{ '/about/' | relative_url }}">More about me {% include icons/arrow.svg %}</a></p>
+  </div>
+</section>
+
+<section class="container section" aria-labelledby="themes-heading">
+  <div class="section__head">
+    <h2 id="themes-heading">Research</h2>
+    <a class="more" href="{{ '/research/' | relative_url }}">All themes {% include icons/arrow.svg %}</a>
+  </div>
+  <ul class="cards">
+    {%- for theme in site.data.themes %}
+    <li class="card">
+      <a class="card__link" href="{{ '/research/' | relative_url }}#{{ theme.key }}">
+        <div class="card__art">{% include motifs/{{ theme.motif }}.svg %}</div>
+        <h3 class="card__title">{{ theme.title }}</h3>
+        <p class="card__text">{{ theme.summary }}</p>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="container section columns">
+  <div aria-labelledby="news-heading">
+    <div class="section__head">
+      <h2 id="news-heading">News</h2>
+      <a class="more" href="{{ '/news/' | relative_url }}">All news {% include icons/arrow.svg %}</a>
+    </div>
+    {% assign recent_news = site.posts | slice: 0, 4 %}
+    {% include news-list.html posts=recent_news compact=true %}
+  </div>
+  <div aria-labelledby="pubs-heading">
+    <div class="section__head">
+      <h2 id="pubs-heading">Recent publications</h2>
+      <a class="more" href="{{ '/publications/' | relative_url }}">All publications {% include icons/arrow.svg %}</a>
+    </div>
+    {% assign recent_pubs = site.publications | sort: 'date' | reverse | slice: 0, 4 %}
+    <ul class="entries entries--compact">
+      {%- for p in recent_pubs %}{% include pub-entry.html pub=p compact=true %}{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="container section affiliations" aria-labelledby="aff-heading">
+  <h2 id="aff-heading" class="affiliations__label">Affiliation</h2>
+  <ul>
+    {%- for a in site.affiliations %}<li><a href="{{ a.url }}">{{ a.name }}</a></li>{% endfor %}
+  </ul>
+</section>
