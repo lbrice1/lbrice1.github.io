@@ -31,8 +31,15 @@ FORBIDDEN = [
 ]
 
 
+REQUIRED = ["index.html", "publications/index.html", "assets/css/site.css", "sitemap.xml"]
+
+
 def main(root: Path) -> int:
     bad = 0
+    for r in REQUIRED:  # an empty or partial build must not pass
+        if not (root / r).is_file():
+            print(f"MISSING      {r}")
+            bad += 1
     for f in sorted(p for p in root.rglob("*") if p.is_file()):
         rel = f.relative_to(root).as_posix()
         if not any(re.match(a, rel) for a in ALLOW):
